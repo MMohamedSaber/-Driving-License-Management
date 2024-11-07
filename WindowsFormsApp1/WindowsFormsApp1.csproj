@@ -138,12 +138,6 @@
     <None Include="Resources\IconLogo.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\cc\DLMBuisnessLayer.csproj">
-      <Project>{72b82ef1-47fb-48a4-827d-7e2dfa41cf5a}</Project>
-      <Name>DLMBuisnessLayer</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Close 32.png" />
   </ItemGroup>
   <ItemGroup>
@@ -211,6 +205,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\call 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DLMBuisnessLayer\DLMBuisnessLayer.csproj">
+      <Project>{72b82ef1-47fb-48a4-827d-7e2dfa41cf5a}</Project>
+      <Name>DLMBuisnessLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "Windows
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLMDataAccessLayer", "..\DLMDataAccessLayer\DLMDataAccessLayer.csproj", "{FD640391-F577-4833-8378-5F375CC74E62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLMBuisnessLayer", "..\cc\DLMBuisnessLayer.csproj", "{72B82EF1-47FB-48A4-827D-7E2DFA41CF5A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLMBuisnessLayer", "..\DLMBuisnessLayer\DLMBuisnessLayer.csproj", "{72B82EF1-47FB-48A4-827D-7E2DFA41CF5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

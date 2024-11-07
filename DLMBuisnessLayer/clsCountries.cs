@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DLMDataAccessLayer;
 
-namespace cc
+namespace  DVLBuisnesLayer
+
 {
     public  class clsCountries
     {

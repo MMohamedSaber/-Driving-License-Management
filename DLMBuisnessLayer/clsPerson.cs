@@ -107,6 +107,8 @@ public static bool DeletePerson(int ID)
         // Public method to save person data, handling both add and update modes
         public bool Save()
         {
+            
+            
             switch (_Mode)
             {
                 case Mode.AddMode:
@@ -123,6 +125,17 @@ public static bool DeletePerson(int ID)
                 default:
                     return false;
             }
+        }
+
+        public static  bool IsAssociated(int ID)
+        {
+            if(!clsPoepleDataAccess.IsExistInAnotherTable(ID))
+            {
+                return true;
+            }
+            return false;
+
+
         }
     }
 }

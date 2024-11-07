@@ -100,58 +100,7 @@ namespace DLMDataAccessLayer
         }
 
 
-        //public static bool GetPoepleInfo(string nationalNo)
-        //{
-        //    int personID nationalNo,  string firstName, string secondName,
-        //    string thirdName, string lastName, DateTime dateOfBirth, int gender, string address, string phone,
-        //      string email, string nationalityCountryID,string imagepath
-        //    bool IsFound = false;
-        //    SqlConnection connection = new SqlConnection(DataAccessSetting.ConnectionString);
-        //    string Query = "Select * from Countries where @PersonID=PersonID";
-
-        //    SqlCommand command = new SqlCommand(Query, connection);
-        //    command.Parameters.AddWithValue("@PersonID", nationalNo);
-
-        //    try
-        //    {
-        //        connection.Open();
-
-        // SqlDataReader reader = command.ExecuteReader();
-        //        IsFound = reader.HasRows;
-        //        if (reader.Read())
-        //        {
-        //            IsFound = true;
-        //            personID = (int)reader["PersonID"];
-        //            firstName = reader["FirstName"].ToString();
-        //            secondName = reader["SecondName"].ToString();
-        //            thirdName = reader["ThirdName"].ToString();
-        //            lastName = reader["LastName"].ToString();
-        //            dateOfBirth = (DateTime)reader["DateOfBirth"];
-        //            gender = (int)reader["Gender"];
-        //            address = reader["Address"].ToString();
-        //            phone = reader["Phone"].ToString();
-        //            email = reader["Email"].ToString();
-        //            nationalityCountryID = reader["NationalityCountryID"].ToString();
-        //            imagepath = reader["ImagePath"].ToString();
-
-
-        //        }
-
-
-        //    }
-        //    catch (Exception)
-        //    {
-        //        IsFound = false;
-        //    }
-        //    finally
-        //    {
-        //        connection.Close();
-        //    }
-
-        //    return IsFound;
-
-
-        //}
+       
         public static DataTable GetAllDataFromPersonTable()
         {
             DataTable dt = new DataTable();
@@ -247,9 +196,6 @@ namespace DLMDataAccessLayer
         }
 
 
-
-
-
         public static bool UpdatePerson(int id,string nationalNo, string firstName, string secondName,
             string thirdName, string lastName, DateTime dateOfBirth, int gender, string address, string phone,
               string email, int nationalityCountryID, string imagepath)
@@ -342,8 +288,32 @@ namespace DLMDataAccessLayer
             }
             return (rowsAffected > 0);
 
+       }
 
+        public static bool IsExistInAnotherTable(int ID)
+        {
+            bool IsFound = false;
+            SqlConnection connection= new SqlConnection(DataAccessSetting.ConnectionString);
+            string query = "Select Isfound=1 from Applications where ApplicantPersonID=@ApplicantPersonID";
 
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@PersonID", ID);
+            try
+            {
+                connection.Open();
+                SqlDataReader Read = cmd.ExecuteReader();
+
+                IsFound = Read.HasRows;
+
+            }catch(Exception )
+            {
+                IsFound = false;
+            }
+            finally
+            {
+                    connection.Close() ;    
+            }
+            return IsFound; 
 
         }
     }

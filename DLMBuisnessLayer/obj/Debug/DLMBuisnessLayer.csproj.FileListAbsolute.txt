@@ -7,3 +7,12 @@ C:\Users\moham\Driving-License-Management\cc\obj\Debug\DLMBuisnessLayer.csproj.C
 C:\Users\moham\Driving-License-Management\cc\obj\Debug\DLMBuisn.C1C0C68C.Up2Date
 C:\Users\moham\Driving-License-Management\cc\obj\Debug\cc.dll
 C:\Users\moham\Driving-License-Management\cc\obj\Debug\cc.pdb
+C:\Users\moham\Driving-License-Management\DLMBuisnessLayer\bin\Debug\cc.dll
+C:\Users\moham\Driving-License-Management\DLMBuisnessLayer\bin\Debug\cc.pdb
+C:\Users\moham\Driving-License-Management\DLMBuisnessLayer\bin\Debug\DLMDataAccessLayer.dll
+C:\Users\moham\Driving-License-Management\DLMBuisnessLayer\bin\Debug\DLMDataAccessLayer.pdb
+C:\Users\moham\Driving-License-Management\DLMBuisnessLayer\obj\Debug\DLMBuisnessLayer.csproj.AssemblyReference.cache
+C:\Users\moham\Driving-License-Management\DLMBuisnessLayer\obj\Debug\DLMBuisnessLayer.csproj.CoreCompileInputs.cache
+C:\Users\moham\Driving-License-Management\DLMBuisnessLayer\obj\Debug\DLMBuisn.C1C0C68C.Up2Date
+C:\Users\moham\Driving-License-Management\DLMBuisnessLayer\obj\Debug\cc.dll
+C:\Users\moham\Driving-License-Management\DLMBuisnessLayer\obj\Debug\cc.pdb

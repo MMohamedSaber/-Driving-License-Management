@@ -1,5 +1,4 @@
-﻿using cc;
-using DVLBuisnesLayer;
+﻿using DVLBuisnesLayer;
 using System;
 using System.ComponentModel;
 using System.Data;
@@ -130,6 +129,7 @@ namespace WindowsFormsApp1
             Person1.ImagePath = ProfilePhoto.ImageLocation;
 
             // Attempt to save the person details to the database
+
             if (Person1.Save())
             {
                 MessageBox.Show(_Mode == Mode.AddMode ? "The Person Saved Successfully" : "The Person Updated Successfully");

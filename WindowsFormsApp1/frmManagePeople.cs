@@ -124,10 +124,25 @@ namespace WindowsFormsApp1
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-            clsPerson.DeletePerson((int)dgvPeople.CurrentRow.Cells[0].Value);
-            _RefreshDataToTable();
+            int PersonNumber = (int)dgvPeople.CurrentRow.Cells[0].Value;
 
+            // Show a confirmation dialog
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this person?", "Confirm Delete",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                if (!clsPerson.IsAssociated(PersonNumber))
+                {
+                    clsPerson.DeletePerson(PersonNumber);
+                    _RefreshDataToTable();
+                }
+                else
+                {
+                    MessageBox.Show("Person was not deleted because it has data linked to it", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void udateToolStripMenuItem_Click(object sender, EventArgs e)
