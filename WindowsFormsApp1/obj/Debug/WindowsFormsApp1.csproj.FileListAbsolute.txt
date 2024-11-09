@@ -17,3 +17,4 @@ C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsF.A1
 C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AddEditPerson.resources
 C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmPersonDetails.resources
 C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.UCPersonDetails.resources
+C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmLoginScreen.resources

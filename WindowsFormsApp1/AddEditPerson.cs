@@ -195,5 +195,10 @@ namespace WindowsFormsApp1
         {
             // Currently not used
         }
+
+        private void txtNationalNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
