@@ -17,13 +17,13 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-       
+
 
 
 
         public string PersonID { set { lblPersonID.Text = value; } }
         public string FullName { set { lblName.Text = value; } }
-        public string NationalNo{ set { lblNationalNo.Text = value; } }
+        public string NationalNo { set { lblNationalNo.Text = value; } }
         public string Email { set { lblEmail.Text = value; } }
         public string Gender { set { lblGender.Text = value; } }
         public string Address { set { lblAddress.Text = value; } }
@@ -31,13 +31,27 @@ namespace WindowsFormsApp1
         public string Phone { set { lblPhone.Text = value; } }
         public string Country { set { lblCountry.Text = value; } }
 
-       public string ImagePath {set {ProfilePhoto.Load(value); } }
+
+        public string ImagePath
+        {
+            set
+            {
+                try
+                {
+                    ProfilePhoto.Load(value);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error loading image: {ex.Message}", "Image Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
         private void UCPersonDetails_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void lbEdithPerson_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        public void lbEdithPerson_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
 

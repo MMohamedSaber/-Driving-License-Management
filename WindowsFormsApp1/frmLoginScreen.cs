@@ -1,5 +1,4 @@
-﻿using cc;
-using DVLBuisnesLayer;
+﻿using DVLBuisnesLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,9 +27,10 @@ namespace WindowsFormsApp1
             {
                 if (clsUsers.Find(UserName, Password))
                 {
-                    Form1 frm = new Form1();
+                    int PersonID= clsUsers.Find(UserName).PersonID;
+                    Form1 frm = new Form1(PersonID);
                     frm.ShowDialog();
-                    this.Close();
+                    this.Visible=false;
                 }
                 else
                 {
@@ -66,6 +66,16 @@ namespace WindowsFormsApp1
             {
                 errorProvider1.SetError(txtPassword, "The Password Field is empty");
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

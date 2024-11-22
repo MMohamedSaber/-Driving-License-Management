@@ -13,9 +13,12 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        int _personID=-1;
+        public Form1(int PersonID)
         {
             InitializeComponent();
+            _personID = PersonID;
+            
             
         }
 
@@ -28,6 +31,40 @@ namespace WindowsFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void accounTSettingToolStripMenuItem_MouseHover(object sender, EventArgs e)
+        {
+            //contextMenuStrip1.Show(accounTSettingToolStripMenuItem.GetCurrentParent(),
+            //    accounTSettingToolStripMenuItem.Bounds.Location);
+        }
+
+        private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            frmLoginScreen frm=new frmLoginScreen();
+            frm.Visible = true;
+
+
+        }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManageUsers frm =new frmManageUsers();
+            frm.Show();
+        }
+
+        private void userInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUserDetails frm = new frmUserDetails(_personID);
+            frm.Show();
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            frmChangePassword frm =new frmChangePassword(_personID);
+            frm.Show();
         }
     }
 }

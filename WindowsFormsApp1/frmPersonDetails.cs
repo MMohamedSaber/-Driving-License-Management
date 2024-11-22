@@ -39,9 +39,8 @@ namespace WindowsFormsApp1
                 ucPersonDetails1.DateOfBirth= _Person.DateOfBirth;
                 ucPersonDetails1.Country=clsCountries.Find(_Person.NationalityCountryID).CountryName;
                 //   ucPersonDetails1.ImagePath.Imag= _Person.ImagePath;
-
-                ucPersonDetails1.ImagePath = _Person.ImagePath;
-
+               ucPersonDetails1.ImagePath = _Person.ImagePath;
+                
             }
         }
 

@@ -151,7 +151,6 @@
             this.groupBox1.Size = new System.Drawing.Size(713, 324);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // dtDateOFBirth
             // 
@@ -269,7 +268,6 @@
             this.txtNationalNo.Name = "txtNationalNo";
             this.txtNationalNo.Size = new System.Drawing.Size(100, 20);
             this.txtNationalNo.TabIndex = 5;
-            this.txtNationalNo.TextChanged += new System.EventHandler(this.txtNationalNo_TextChanged);
             this.txtNationalNo.Validating += new System.ComponentModel.CancelEventHandler(this.txtNationalNo_Validating);
             // 
             // label5

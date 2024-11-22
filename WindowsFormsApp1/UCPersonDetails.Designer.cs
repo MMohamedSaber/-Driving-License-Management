@@ -331,6 +331,7 @@
             // 
             // ProfilePhoto
             // 
+            this.ProfilePhoto.Image = global::WindowsFormsApp1.Properties.Resources.Male_512;
             this.ProfilePhoto.Location = new System.Drawing.Point(484, 70);
             this.ProfilePhoto.Name = "ProfilePhoto";
             this.ProfilePhoto.Size = new System.Drawing.Size(100, 83);

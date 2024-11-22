@@ -1,6 +1,8 @@
 ﻿using DLMDataAccessLayer;
 using System;
 using System.Data;
+using System.Net;
+using System.Security.Policy;
 
 namespace DVLBuisnesLayer
 {
@@ -26,7 +28,23 @@ namespace DVLBuisnesLayer
         public string ImagePath { get; set; }
 
         // Default constructor
-        public clsPerson() { }
+        public clsPerson() 
+        {
+            ID = -1;
+            NationalNo = string.Empty;
+            FirstName = string.Empty;
+            SecondName = string.Empty;
+            ThirdName = string.Empty;
+            LastName = string.Empty;
+            DateOfBirth = DateTime.MinValue;
+            Gender = 0; // نفترض 0 للذكر و 1 للأنثى، أو خليها حسب الحاجة
+            Address = string.Empty;
+            Phone = string.Empty;
+            Email = string.Empty;
+            NationalityCountryID = -1; // قيمة افتراضية غير صالحة (لو عندك قائمة بالدول)
+            ImagePath = string.Empty;
+            _Mode = Mode.AddMode;
+        }
 
         // Private constructor used for initializing a person with complete data
         private clsPerson(int id, string nationalNo, string firstName, string secondName, string thirdName, string lastName,
@@ -47,11 +65,12 @@ namespace DVLBuisnesLayer
             NationalityCountryID = nationalityCountryID;
             ImagePath = imagePath;
 
-            _Mode = Mode.AddMode; // Initialize in add mode by default
+            _Mode = Mode.UpdateMode;
+             // Initialize in add mode by default
         }
 
         // Static method to check if a person exists by NationalNo
-        public static bool Find(string nationalNo)
+        public static bool IsExist(string nationalNo)
         {
             return clsPoepleDataAccess.IsPersonExist(nationalNo);
         }
@@ -73,12 +92,33 @@ namespace DVLBuisnesLayer
             int nationalityCountryID = -1;
 
             // Attempt to retrieve person information
-            bool isFound = clsPoepleDataAccess.GetPoepleInfo(id, ref nationalNo, ref firstName, ref secondName,
+            bool isFound = clsPoepleDataAccess.GetPoepleInfoByID(id, ref nationalNo, ref firstName, ref secondName,
                                                              ref thirdName, ref lastName, ref dateOfBirth, ref gender,
                                                              ref address, ref phone, ref email,
                                                              ref nationalityCountryID, ref imagePath);
             // Return a new clsPerson instance if found, otherwise null
             return isFound ? new clsPerson(id, nationalNo, firstName, secondName, thirdName, lastName,
+                                           dateOfBirth, gender, address, phone, email, nationalityCountryID, imagePath) : null;
+        }
+
+        public static clsPerson Find(string NationalNo)
+        {
+            // Variables to hold retrieved values
+            string  firstName = "", secondName = "", thirdName = "", lastName = "",
+                   address = "", phone = "", email = "", imagePath = "";
+            DateTime dateOfBirth = new DateTime();
+            int gender = -1;
+            int nationalityCountryID  = -1;
+            int ID = -1;
+
+
+            // Attempt to retrieve person information
+            bool isFound = clsPoepleDataAccess.GetPoepleInfoByNationalNo(NationalNo, ref ID, ref firstName, ref secondName,
+                                                             ref thirdName, ref lastName, ref dateOfBirth, ref gender,
+                                                             ref address, ref phone, ref email,
+                                                             ref nationalityCountryID, ref imagePath);
+            // Return a new clsPerson instance if found, otherwise null
+            return isFound ? new clsPerson(ID, NationalNo, firstName, secondName, thirdName, lastName,
                                            dateOfBirth, gender, address, phone, email, nationalityCountryID, imagePath) : null;
         }
 

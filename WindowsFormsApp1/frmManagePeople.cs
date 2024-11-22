@@ -1,154 +1,175 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DVLBuisnesLayer;
-
-
 
 namespace WindowsFormsApp1
 {
     public partial class frmManagePeople : Form
     {
+        // DataTable to hold people data
+        DataTable peopleTable;
+
         public frmManagePeople()
         {
             InitializeComponent();
         }
 
-
-        DataTable peopleTable;
-
-      public  void _RefreshDataToTable()
+        /// <summary>
+        /// Refresh the DataGridView with the latest data from the database.
+        /// </summary>
+        public void _RefreshDataToTable()
         {
-            peopleTable = clsPerson.LoadAllData();
-            dgvPeople.DataSource = peopleTable;
-            dgvPeople.ContextMenuStrip = contextMenuStrip1;
-
+            peopleTable = clsPerson.LoadAllData(); // Load all people data from the database
+            dgvPeople.DataSource = peopleTable; // Bind the DataTable to the DataGridView
+            dgvPeople.ContextMenuStrip = contextMenuStrip1; // Assign the context menu to the DataGridView
         }
+
         private void frmManagePeople_Load(object sender, EventArgs e)
         {
-            _RefreshDataToTable();
-            cbFilterData.SelectedIndex = 0;
+            _RefreshDataToTable(); // Load data when the form is loaded
         }
 
-
-
+        /// <summary>
+        /// Handle the close menu item click event.
+        /// </summary>
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close(); // Close the form
         }
 
-        private void cbFilterData_SelectedIndexChanged(object sender, EventArgs e) 
+        /// <summary>
+        /// Apply the filter when the selected index in the ComboBox changes.
+        /// </summary>
+        private void cbFilterData_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-
-            ApplyFilter();
-        //{
-        //    DataView PeopleDataVieu = peopleTable.DefaultView;
-
-            //    if (cbFilterData.SelectedItem != null)
-            //    {
-            //        string selectedColumn = cbFilterData.SelectedItem.ToString();
-
-            //        // Check if the selected item is a valid column in the DataTable
-            //        if (peopleTable.Columns.Contains(selectedColumn))
-            //        {
-            //            PeopleDataVieu.RowFilter = $"[{selectedColumn}] IS NOT NULL"; // To display all rows for the column
-            //        }
-            //        else
-            //        {
-            //            PeopleDataVieu.RowFilter = ""; // Clear filter if invalid column
-            //        }
-            //    }
-        }
-        private void ApplyFilter()
-        {
-            if (peopleTable == null)
-                return;
-
-            DataView PeopleDataVieu = peopleTable.DefaultView;
-            string selectedColumn = cbFilterData.SelectedItem?.ToString();//The ?. operator is used to prevent errors if no item is selected in the ComboBox. If nothing is selected, selectedColumn will be set to null instead of causing an exception.
-
-            string searchText = textBox1.Text.Trim();
-
-            // Ensure the selected column exists in the DataTable
-            if (!string.IsNullOrEmpty(selectedColumn) && peopleTable.Columns.Contains(selectedColumn))
+            if (!string.IsNullOrEmpty(cbFilterData.Text) && !string.IsNullOrEmpty(txtSearchKey.Text))
             {
-                // Set RowFilter to display rows matching the search text in the selected column
-                PeopleDataVieu.RowFilter = string.IsNullOrEmpty(searchText)
-                    ? $"[{selectedColumn}] IS NOT NULL" // Show all non-null rows for the column if search text is empty
-                    : $"[{selectedColumn}] LIKE '%{searchText}%'";
+                _ApplyFilter(cbFilterData.Text, txtSearchKey.Text); // Apply filter when a different column is selected
             }
-            else
-            {
-                PeopleDataVieu.RowFilter = ""; // Clear filter if no valid column is selected
-            }
-        }
-
-        void _LoadAddNewPage()
-        {
-            AddEditPerson frm = new AddEditPerson(-1);
-            frm.ShowDialog();
-            _RefreshDataToTable();
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            _LoadAddNewPage();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            ApplyFilter();
         }
 
         
-        private void addNewPersonToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            _LoadAddNewPage();
 
+        /// <summary>
+        /// Open the Add/Edit Person form in Add mode.
+        /// </summary>
+        void _LoadAddNewPage()
+        {
+            AddEditPerson frm = new AddEditPerson(-1); // -1 indicates adding a new person
+            frm.ShowDialog(); // Show the form as a dialog
+            _RefreshDataToTable(); // Refresh the DataGridView after adding a new person
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            _LoadAddNewPage(); // Handle the "Add New" button click
+        }
+
+        /// <summary>
+        /// Apply filter dynamically as the user types in the search box.
+        /// </summary>
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtSearchKey.Text))
+            {
+                cbFilterData.Enabled = true; // Enable the ComboBox when search is empty
+            }
+            else
+            {
+                cbFilterData.Enabled = false; // Disable the ComboBox when typing in search
+            }
+            _ApplyFilter(cbFilterData.Text, txtSearchKey.Text); // Apply the filter
+        }
+
+
+
+
+
+        /// <summary>
+        /// Apply a filter to the DataGridView based on the specified column and key.
+        /// </summary>
+        private void _ApplyFilter(string filterBy, object key)
+        {
+            DataView view = peopleTable.DefaultView;
+
+            // Check if the key is numeric
+            if (int.TryParse(key.ToString(), out int numericKey))
+            {
+                view.RowFilter = $"{filterBy} = {key}"; // Exact match for numbers
+            }
+            else
+            {
+                view.RowFilter = $"{filterBy} LIKE '%{key}%'"; // Partial match for text
+            }
+
+            dgvPeople.DataSource = view; // Bind the filtered view to the DataGridView
+        }
+
+        /// <summary>
+        /// Open the Add/Edit Person form in Edit mode with the selected person's ID.
+        /// </summary>
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-            AddEditPerson frm = new AddEditPerson((int)dgvPeople.CurrentRow.Cells[0].Value);
+            int personId = (int)dgvPeople.CurrentRow.Cells[0].Value; // Get the selected person's ID
+            AddEditPerson frm = new AddEditPerson(personId); // Open the form in Edit mode
             frm.ShowDialog();
-            _RefreshDataToTable();
+            _RefreshDataToTable(); // Refresh the DataGridView after editing
         }
 
+        /// <summary>
+        /// Delete the selected person after confirmation.
+        /// </summary>
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int PersonNumber = (int)dgvPeople.CurrentRow.Cells[0].Value;
+            int personId = (int)dgvPeople.CurrentRow.Cells[0].Value; // Get the selected person's ID
 
             // Show a confirmation dialog
-            DialogResult result = MessageBox.Show("Are you sure you want to delete this person?", "Confirm Delete",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to delete this person?",
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
 
             if (result == DialogResult.Yes)
             {
-                if (!clsPerson.IsAssociated(PersonNumber))
+                bool isDeleted = clsPerson.DeletePerson(personId); // Attempt to delete the person
+                if (isDeleted)
                 {
-                    clsPerson.DeletePerson(PersonNumber);
-                    _RefreshDataToTable();
+                    _RefreshDataToTable(); // Refresh data if the person was deleted
                 }
                 else
                 {
-                    MessageBox.Show("Person was not deleted because it has data linked to it", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(
+                        "Person was not deleted because it has data linked to it.",
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                    );
                 }
             }
         }
 
+        /// <summary>
+        /// Open the Person Details form to view additional details of the selected person.
+        /// </summary>
         private void udateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmPersonDetails frm = new frmPersonDetails((int)dgvPeople.CurrentRow.Cells[0].Value);
+            int personId = (int)dgvPeople.CurrentRow.Cells[0].Value; // Get the selected person's ID
+            frmPersonDetails frm = new frmPersonDetails(personId); // Open the form with the person's ID
             frm.ShowDialog();
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            // Handle the opening event for the context menu (if needed)
+        }
+
+        private void cbFilterData_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }

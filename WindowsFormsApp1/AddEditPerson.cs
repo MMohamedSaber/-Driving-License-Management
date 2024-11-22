@@ -9,6 +9,10 @@ namespace WindowsFormsApp1
 {
     public partial class AddEditPerson : Form
     {
+       public delegate void FillDataInfo(clsPerson person);
+        public event FillDataInfo DataBack;
+
+
         // Private member variables
         private clsPerson _Person;
         private int _PersonId;
@@ -23,6 +27,10 @@ namespace WindowsFormsApp1
 
             _Mode = (_PersonId == -1) ? Mode.AddMode : Mode.UpdateMode;
         }
+
+        
+
+
 
         // Load data into the form fields based on the current mode
         private void LoadData()
@@ -55,7 +63,15 @@ namespace WindowsFormsApp1
             // Load profile photo if available
             if (_Person.ImagePath != null)
             {
-                ProfilePhoto.Load(_Person.ImagePath);
+
+                try
+                {
+                    ProfilePhoto.Load(_Person.ImagePath);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error loading image: {ex.Message}", "Image Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -112,27 +128,25 @@ namespace WindowsFormsApp1
         // Save or update person information
         private void btnSave_Click(object sender, EventArgs e)
         {
-            clsPerson Person1 = new clsPerson();
-
             // Populate person details from input fields
-            Person1.NationalNo = txtNationalNo.Text;
-            Person1.FirstName = txtFirstName.Text;
-            Person1.SecondName = txtSecondName.Text;
-            Person1.ThirdName = txtThirdName.Text;
-            Person1.LastName = txtLastName.Text;
-            Person1.DateOfBirth = dtDateOFBirth.Value;
-            Person1.Gender = rbMale.Checked ? 0 : 1;
-            Person1.Address = txtAddress.Text;
-            Person1.Phone = txtPhone.Text;
-            Person1.Email = txtEmail.Text;
-            Person1.NationalityCountryID = clsCountries.Find(cbCountry.Text).ID;
-            Person1.ImagePath = ProfilePhoto.ImageLocation;
-
+            _Person.NationalNo = txtNationalNo.Text;
+            _Person.FirstName = txtFirstName.Text;
+            _Person.SecondName = txtSecondName.Text;
+            _Person.ThirdName = txtThirdName.Text;
+            _Person.LastName = txtLastName.Text;
+            _Person.DateOfBirth = dtDateOFBirth.Value;
+            _Person.Gender = rbMale.Checked ? 0 : 1;
+            _Person.Address = txtAddress.Text;
+            _Person.Phone = txtPhone.Text;
+            _Person.Email = txtEmail.Text;
+            _Person.NationalityCountryID = clsCountries.Find(cbCountry.Text).ID;
+            _Person.ImagePath = ProfilePhoto.ImageLocation;
             // Attempt to save the person details to the database
 
-            if (Person1.Save())
+            if (_Person.Save())
             {
                 MessageBox.Show(_Mode == Mode.AddMode ? "The Person Saved Successfully" : "The Person Updated Successfully");
+                DataBack?.Invoke(_Person);
             }
             else
             {
@@ -170,18 +184,26 @@ namespace WindowsFormsApp1
                 errorProvider1.SetError(txtNationalNo, "The National Number is empty");
             }
 
-            if (clsPerson.Find(txtNationalNo.Text))
+            if (clsPerson.IsExist(txtNationalNo.Text))
             {
                 errorProvider1.SetError(txtNationalNo, "The National Number already exists");
+            }
+            else
+            {
+                errorProvider1.Clear();
             }
         }
 
         // Validate Address field
         private void txtAddress_Validating(object sender, CancelEventArgs e)
-        {
+                {
             if (string.IsNullOrEmpty(txtAddress.Text))
             {
                 errorProvider1.SetError(txtAddress, "The Address Field is empty");
+            }
+            else
+            {
+                errorProvider1.Clear();
             }
         }
 
@@ -191,14 +213,6 @@ namespace WindowsFormsApp1
             this.Close();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-            // Currently not used
-        }
-
-        private void txtNationalNo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

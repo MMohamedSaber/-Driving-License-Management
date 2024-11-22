@@ -20,7 +20,7 @@ namespace DLMDataAccessLayer
         { }
              
         
-        public static  bool GetPoepleInfo( int personID,ref string nationalNo,ref  string firstName,ref string secondName,
+        public static  bool GetPoepleInfoByID( int personID,ref string nationalNo,ref  string firstName,ref string secondName,
            ref string thirdName,ref string lastName,ref DateTime dateOfBirth,ref int gender,ref string address  ,ref string phone,
              ref  string email,ref int nationalityCountryID,ref string imagepath)
         {
@@ -70,6 +70,57 @@ namespace DLMDataAccessLayer
 
         }
 
+
+        public static bool GetPoepleInfoByNationalNo(string nationalNo, ref int personid, ref string firstName, ref string secondName,
+           ref string thirdName, ref string lastName, ref DateTime dateOfBirth, ref int gender, ref string address, ref string phone,
+             ref string email, ref int nationalityCountryID, ref string imagepath)
+        {
+
+
+            bool IsFound = false;
+            SqlConnection connection = new SqlConnection(DataAccessSetting.ConnectionString);
+            string Query = "Select * from People Where NationalNo=@NationalNo";
+
+            SqlCommand cmd = new SqlCommand(Query, connection);
+            cmd.Parameters.AddWithValue("@NationalNo", nationalNo);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+
+                    IsFound = true;
+                    personid = (int)reader["PersonID"];
+                    nationalNo = (string)reader["NationalNo"];
+                    firstName = (string)reader["FirstName"];
+                    secondName = (string)reader["SecondName"];
+                    thirdName = (string)reader["ThirdName"];
+                    lastName = (string)reader["LastName"];
+                    dateOfBirth = (DateTime)reader["DateOfBirth"];
+                    gender = Convert.ToInt32(reader["Gendor"]); // Assuming Gender is an integer
+                    address = (string)reader["Address"];
+                    phone = (string)reader["Phone"];
+                    email = (string)reader["Email"];
+                    nationalityCountryID = (int)reader["NationalityCountryID"];
+                    imagepath = reader["ImagePath"] != DBNull.Value ? (string)reader["ImagePath"] : "";
+                }
+                reader.Close();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return IsFound;
+
+
+        }
         public static bool IsPersonExist(string nationalNo)
         {
             bool IsFound = false;
