@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
         private enum enMode { AddMode = 1, UpdateMode = 2 }
         private enMode _Mode = enMode.AddMode; // Default mode
         private int _PersonID; // Stores the ID of the person
-        clsUsers _User; // Instance of the clsUsers business layer
+        clsUsers _User = new clsUsers(); // Instance of the clsUsers business layer
 
         // Constructor to initialize the form
         public frmAddNewUser(int UserID)
@@ -201,7 +201,6 @@ namespace WindowsFormsApp1
             }
 
             // Save user data
-            _User = clsUsers.Find(_PersonID);
             _User.UserName = txtUserName.Text;
             _User.Password = txtPassword.Text;
             _User.IsActive = CheckIsActive.Checked;

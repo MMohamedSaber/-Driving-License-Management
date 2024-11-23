@@ -90,6 +90,7 @@ namespace WindowsFormsApp1
         {
             frmAddNewUser frm = new frmAddNewUser(-1); // Open the add user form with default ID
             frm.ShowDialog(); // Show the form as a dialog
+            _RefreshDataTodvg();
         }
 
         // Event handler for key press in the search text box

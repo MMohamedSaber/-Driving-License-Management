@@ -29,7 +29,12 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.applicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fffToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.fffToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.fffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageApplicationTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.driversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.peopleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,7 +42,6 @@
             this.userInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,12 +63,53 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.IconLogo;
+            this.pictureBox1.Location = new System.Drawing.Point(442, 287);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(416, 170);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // applicationsToolStripMenuItem
             // 
+            this.applicationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fffToolStripMenuItem1,
+            this.fffToolStripMenuItem2,
+            this.fffToolStripMenuItem,
+            this.manageApplicationTypeToolStripMenuItem});
             this.applicationsToolStripMenuItem.Image = global::WindowsFormsApp1.Properties.Resources.Applications_64;
             this.applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
             this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(190, 54);
             this.applicationsToolStripMenuItem.Text = "Applications";
+            this.applicationsToolStripMenuItem.Click += new System.EventHandler(this.applicationsToolStripMenuItem_Click);
+            // 
+            // fffToolStripMenuItem1
+            // 
+            this.fffToolStripMenuItem1.Name = "fffToolStripMenuItem1";
+            this.fffToolStripMenuItem1.Size = new System.Drawing.Size(322, 30);
+            this.fffToolStripMenuItem1.Text = "fff";
+            // 
+            // fffToolStripMenuItem2
+            // 
+            this.fffToolStripMenuItem2.Name = "fffToolStripMenuItem2";
+            this.fffToolStripMenuItem2.Size = new System.Drawing.Size(322, 30);
+            this.fffToolStripMenuItem2.Text = "fff";
+            // 
+            // fffToolStripMenuItem
+            // 
+            this.fffToolStripMenuItem.Name = "fffToolStripMenuItem";
+            this.fffToolStripMenuItem.Size = new System.Drawing.Size(322, 30);
+            this.fffToolStripMenuItem.Text = "fff";
+            // 
+            // manageApplicationTypeToolStripMenuItem
+            // 
+            this.manageApplicationTypeToolStripMenuItem.Name = "manageApplicationTypeToolStripMenuItem";
+            this.manageApplicationTypeToolStripMenuItem.Size = new System.Drawing.Size(322, 30);
+            this.manageApplicationTypeToolStripMenuItem.Text = "Manage Application Type";
+            this.manageApplicationTypeToolStripMenuItem.Click += new System.EventHandler(this.manageApplicationTypeToolStripMenuItem_Click);
             // 
             // driversToolStripMenuItem
             // 
@@ -134,16 +179,6 @@
             this.signOutToolStripMenuItem.Text = "Sign Out";
             this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.IconLogo;
-            this.pictureBox1.Location = new System.Drawing.Point(442, 287);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(416, 170);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -181,6 +216,10 @@
         private System.Windows.Forms.ToolStripMenuItem userInfoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fffToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem fffToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem fffToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageApplicationTypeToolStripMenuItem;
     }
 }
 

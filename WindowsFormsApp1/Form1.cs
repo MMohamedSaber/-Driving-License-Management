@@ -66,5 +66,16 @@ namespace WindowsFormsApp1
             frmChangePassword frm =new frmChangePassword(_personID);
             frm.Show();
         }
+
+        private void manageApplicationTypeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManageApplicationType frm = new frmManageApplicationType();
+            frm.Show();
+        }
+
+        private void applicationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
