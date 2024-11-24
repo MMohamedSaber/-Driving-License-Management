@@ -77,5 +77,11 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void manageTestsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManageTests frm = new frmManageTests();
+            frm.ShowDialog();
+        }
     }
 }

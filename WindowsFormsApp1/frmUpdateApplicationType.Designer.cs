@@ -53,6 +53,7 @@
             this.lblTitle.Size = new System.Drawing.Size(256, 27);
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "Update Application Type";
+            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
             // 
             // label4
             // 
@@ -64,6 +65,7 @@
             this.label4.Size = new System.Drawing.Size(39, 17);
             this.label4.TabIndex = 29;
             this.label4.Text = "Fees:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -75,6 +77,7 @@
             this.label3.Size = new System.Drawing.Size(40, 17);
             this.label3.TabIndex = 30;
             this.label3.Text = "Title:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtTitle
             // 
@@ -82,6 +85,7 @@
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(218, 20);
             this.txtTitle.TabIndex = 27;
+            this.txtTitle.TextChanged += new System.EventHandler(this.txtTitle_TextChanged);
             // 
             // txtFees
             // 
@@ -89,6 +93,7 @@
             this.txtFees.Name = "txtFees";
             this.txtFees.Size = new System.Drawing.Size(218, 20);
             this.txtFees.TabIndex = 28;
+            this.txtFees.TextChanged += new System.EventHandler(this.txtFees_TextChanged);
             // 
             // label1
             // 
@@ -100,6 +105,7 @@
             this.label1.Size = new System.Drawing.Size(26, 17);
             this.label1.TabIndex = 30;
             this.label1.Text = "ID:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblID
             // 
@@ -111,6 +117,7 @@
             this.lblID.Size = new System.Drawing.Size(32, 17);
             this.lblID.TabIndex = 30;
             this.lblID.Text = "????";
+            this.lblID.Click += new System.EventHandler(this.lblID_Click);
             // 
             // pictureBox4
             // 
@@ -121,6 +128,7 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 33;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // btnCancel
             // 
@@ -157,6 +165,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // frmUpdateApplicationType
             // 
