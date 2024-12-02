@@ -14,11 +14,12 @@ namespace WindowsFormsApp1
     public partial class Form1 : Form
     {
         int _personID=-1;
-        public Form1(int PersonID)
+        string _userName;
+        public Form1(int PersonID,string username)
         {
             InitializeComponent();
             _personID = PersonID;
-            
+            _userName = username;
             
         }
 
@@ -81,6 +82,18 @@ namespace WindowsFormsApp1
         private void manageTestsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmManageTests frm = new frmManageTests();
+            frm.ShowDialog();
+        }
+
+        private void localLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLocalLicenseApplication frm = new frmLocalLicenseApplication(-1, _userName);
+            frm.ShowDialog();
+        }
+
+        private void localDrivingLicenseApplicationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMangeLocalLicensApplication frm = new frmMangeLocalLicensApplication();
             frm.ShowDialog();
         }
     }

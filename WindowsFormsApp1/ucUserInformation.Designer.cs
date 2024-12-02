@@ -45,6 +45,7 @@
             this.ucPersonDetails1.Name = "ucPersonDetails1";
             this.ucPersonDetails1.Size = new System.Drawing.Size(597, 206);
             this.ucPersonDetails1.TabIndex = 0;
+            this.ucPersonDetails1.Load += new System.EventHandler(this.ucPersonDetails1_Load);
             // 
             // groupBox1
             // 
@@ -60,6 +61,7 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "LoginInfo";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // lblIsActive
             // 

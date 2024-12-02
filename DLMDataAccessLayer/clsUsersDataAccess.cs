@@ -172,8 +172,10 @@ namespace DLMDataAccessLayer
             {
                 connection.Open();
                 SqlDataReader reader = Command.ExecuteReader();
+
                 if (reader.Read())
                 {
+                    isFound = true;
                     userID = (int)reader["UserID"];
                     personID = (int)reader["PersonID"];
                     userName = (string)reader["UserName"];

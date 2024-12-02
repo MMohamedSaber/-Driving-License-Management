@@ -64,6 +64,12 @@
     <Compile Include="frmAddNewUser.Designer.cs">
       <DependentUpon>frmAddNewUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLocalLicenseApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLocalLicenseApplication.Designer.cs">
+      <DependentUpon>frmLocalLicenseApplication.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLoginScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,12 @@
     </Compile>
     <Compile Include="frmManageUsers.Designer.cs">
       <DependentUpon>frmManageUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMangeLocalLicensApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMangeLocalLicensApplication.Designer.cs">
+      <DependentUpon>frmMangeLocalLicensApplication.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPersonDetails.cs">
       <SubType>Form</SubType>
@@ -126,6 +138,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="testtest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testtest.Designer.cs">
+      <DependentUpon>testtest.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCFilteringData.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,6 +171,9 @@
     <EmbeddedResource Include="frmAddNewUser.resx">
       <DependentUpon>frmAddNewUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLocalLicenseApplication.resx">
+      <DependentUpon>frmLocalLicenseApplication.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLoginScreen.resx">
       <DependentUpon>frmLoginScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmManageUsers.resx">
       <DependentUpon>frmManageUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMangeLocalLicensApplication.resx">
+      <DependentUpon>frmMangeLocalLicensApplication.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPersonDetails.resx">
       <DependentUpon>frmPersonDetails.cs</DependentUpon>
@@ -193,6 +217,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="testtest.resx">
+      <DependentUpon>testtest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCFilteringData.resx">
       <DependentUpon>UCFilteringData.cs</DependentUpon>
     </EmbeddedResource>
@@ -355,6 +382,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\TestType 512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LocalDriving License.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Renew Driving License 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Applications.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New Application 64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit 321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete 32 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete 321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PersonLicenseHistory 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Schedule Test 32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
             _users = clsUsers.Find(_personID);
 
            // Populate person details
-                ucUserInformation1.PersonID = _persons.ID.ToString();
+             ucUserInformation1.PersonID = _persons.ID.ToString();
             ucUserInformation1.FullName = $"{_persons.FirstName} {_persons.SecondName} {_persons.ThirdName} {_persons.LastName}";
             ucUserInformation1.NationalNo = _persons.NationalNo;
             ucUserInformation1.Email = _persons.Email;

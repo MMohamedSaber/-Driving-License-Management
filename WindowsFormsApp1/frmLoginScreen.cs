@@ -27,8 +27,8 @@ namespace WindowsFormsApp1
             {
                 if (clsUsers.Find(UserName, Password))
                 {
-                    int PersonID= clsUsers.Find(UserName).PersonID;
-                    Form1 frm = new Form1(PersonID);
+                   // int PersonID= clsUsers.Find(UserName).PersonID;
+                    Form1 frm = new Form1(clsUsers.Find(UserName).PersonID,clsUsers.Find(UserName).UserName);
                     frm.ShowDialog();
                     this.Visible=false;
                 }

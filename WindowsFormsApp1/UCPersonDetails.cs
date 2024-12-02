@@ -21,7 +21,11 @@ namespace WindowsFormsApp1
 
 
 
-        public string PersonID { set { lblPersonID.Text = value; } }
+        public string PersonID
+        {
+            get { return lblPersonID.Text; } // قراءة النص الحالي من lblPersonID
+            set { lblPersonID.Text = value; } // تعيين النص إلى lblPersonID
+        }
         public string FullName { set { lblName.Text = value; } }
         public string NationalNo { set { lblNationalNo.Text = value; } }
         public string Email { set { lblEmail.Text = value; } }
