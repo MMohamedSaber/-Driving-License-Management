@@ -1,189 +1,163 @@
-﻿using DLMDataAccessLayer;
-using System;
+﻿using System;
 using System.Data;
-using System.Runtime.Remoting.Messaging;
+using DLMDataAccessLayer;
+using DVLBuisnesLayer;
+using DVLBuisnesLayer;
+
 
 namespace DVLBuisnesLayer
 {
-    // Enum for mode
-   public enum   enMode
+    public class clsApplication
     {
-        Add = 1,
-        Update = 2
-    }
-
-    public class clsApplications
-    {
-        public enum enApplicationStatus { New = 1, Canceled = 2, Completed = 3 }
-
+        public enum enMode { AddNew = 0, Update = 1 };
         public enum enApplicationType
         {
             NewDrivingLicense = 1, RenewDrivingLicense = 2, ReplaceLostDrivingLicense = 3,
-            ReplaceDamagedDrivingLicense = 4, ReleaseDetainedDrivingLicense = 5, NewInterNationalLicense = 6, RetakeTest = 7
-        }
+            ReplaceDamagedDrivingLicense = 4, ReleaseDetainedDrivingLicsense = 5, NewInternationalLicense = 6, RetakeTest = 7
+        };
 
-        public enum enMode
+        public enMode Mode = enMode.AddNew;
+        public enum enApplicationStatus { New = 1, Cancelled = 2, Completed = 3 };
+
+        public int ApplicationID { set; get; }
+        public int ApplicantPersonID { set; get; }
+        public string ApplicantFullName
         {
-            Add = 1,
-            Update = 2
-        }
-        public  enMode Mode { get; set; }
-
-        public int ApplicationID { get; set; }
-        public int PersonID { get; set; }
-        public clsPerson PersonInfo;
-        public DateTime ApplicationDate { get; set; }
-        public int ApplicationTypeID { get; set; }
-        public clsApplicationType ApplicationTypeInfo;
-        public enApplicationStatus AppStatus { get; set; }
-        string StatusText
-        {  get
+            get
             {
-                switch (AppStatus)
+               return clsPerson.Find(ApplicantPersonID).FirstName;
+            }
+        }
+        public DateTime ApplicationDate { set; get; }
+        public int ApplicationTypeID { set; get; }
+        public clsApplicationType ApplicationTypeInfo;
+        public enApplicationStatus ApplicationStatus { set; get; }
+        public string StatusText
+        {
+            get
+            {
+
+                switch (ApplicationStatus)
                 {
                     case enApplicationStatus.New:
                         return "New";
-                    case enApplicationStatus.Canceled:
-                        return "Canceled";
+                    case enApplicationStatus.Cancelled:
+                        return "Cancelled";
                     case enApplicationStatus.Completed:
                         return "Completed";
                     default:
-                        return "UnKnown";
-
+                        return "Unknown";
                 }
             }
-         }
-        public DateTime LastStatusDate { get; set; }
-        public float PaidFees { get; set; }
-        public int CreatedByUser { get; set; }
+
+        }
+        public DateTime LastStatusDate { set; get; }
+        public float PaidFees { set; get; }
+        public int CreatedByUserID { set; get; }
         public clsUsers CreatedByUserInfo;
 
-        // Empty constructor for Add mode
-        public clsApplications()
+        public clsApplication()
+
         {
-            ApplicationID = 0;
-            PersonID = 0;
-            ApplicationDate = DateTime.Now;
-            ApplicationTypeID = 0;
-            AppStatus = 0;
-            LastStatusDate = DateTime.Now;
-            PaidFees = 0;
-            CreatedByUser = 0;
-            Mode = enMode.Add;
+            this.ApplicationID = -1;
+            this.ApplicantPersonID = -1;
+            this.ApplicationDate = DateTime.Now;
+            this.ApplicationTypeID = -1;
+            this.ApplicationStatus = enApplicationStatus.New;
+            this.LastStatusDate = DateTime.Now;
+            this.PaidFees = 0;
+            this.CreatedByUserID = -1;
+
+            Mode = enMode.AddNew;
+
         }
 
-        // Constructor for Update mode
-        public clsApplications(int applicationID, int personID, DateTime dateTime, int applicationTypeID,
-                               enApplicationStatus status, DateTime lastStatusDate, float paidFees, int createdByUser)
+        private clsApplication(int ApplicationID, int ApplicantPersonID,
+            DateTime ApplicationDate, int ApplicationTypeID,
+             enApplicationStatus ApplicationStatus, DateTime LastStatusDate,
+             float PaidFees, int CreatedByUserID)
+
         {
-            this.ApplicationID = applicationID;
-            this.PersonID = personID;
-            this.ApplicationDate = dateTime;
-            this.ApplicationTypeInfo = clsApplicationType.Find(applicationTypeID);
-            this.AppStatus = status;
-            this.LastStatusDate = lastStatusDate;
-            this.PaidFees = paidFees;
-            this.CreatedByUserInfo = clsUsers.Find(createdByUser);
+            this.ApplicationID = ApplicationID;
+            this.ApplicantPersonID = ApplicantPersonID;
+            this.ApplicationDate = ApplicationDate;
+            this.ApplicationTypeID = ApplicationTypeID;
+            this.ApplicationTypeInfo = clsApplicationType.Find(ApplicationTypeID);
+            this.ApplicationStatus = ApplicationStatus;
+            this.LastStatusDate = LastStatusDate;
+            this.PaidFees = PaidFees;
+            this.CreatedByUserID = CreatedByUserID;
+            this.CreatedByUserInfo = clsUsers.Find(CreatedByUserID);
             Mode = enMode.Update;
         }
 
-
-        public static DataTable GetAllApplications()
+        private bool _AddNewApplication()
         {
-            return clsApplicationData.GetAllApplications();
+            //call DataAccess Layer 
+
+            this.ApplicationID = clsApplicationData.CreateApplication(
+                this.ApplicantPersonID, this.ApplicationDate,
+                this.ApplicationTypeID, (byte)this.ApplicationStatus,
+                this.LastStatusDate, this.PaidFees, this.CreatedByUserID);
+
+            return (this.ApplicationID != -1);
         }
 
-        // Read: Retrieve an application by ID
-        public static clsApplications FindBaseApplication(int applicationID)
+        private bool _UpdateApplication()
         {
-            int perosnID = -1, applicationtype = -1; byte Status=1 ;
-            DateTime dateTime=new DateTime(), LastStatus=new DateTime();
-            float paidFees=0;
-            int createdByUser = -1;
+            //call DataAccess Layer 
 
-            bool IsFound = false;
-            IsFound=clsApplicationData.GetApplicationById(ref applicationID, ref perosnID, ref dateTime, ref applicationtype, ref Status,
-                ref LastStatus, ref paidFees, ref createdByUser);
+            return clsApplicationData.UpdateApplicationById(this.ApplicationID, this.ApplicantPersonID, this.ApplicationDate,
+                this.ApplicationTypeID, (byte)this.ApplicationStatus,
+                this.LastStatusDate, this.PaidFees, this.CreatedByUserID);
 
-            if(IsFound)
-            {
-                return new clsApplications( applicationID,  perosnID,  dateTime,  applicationtype,(enApplicationStatus)Status,
-                 LastStatus,  paidFees,  createdByUser);
-            }
+        }
+
+        public static clsApplication FindBaseApplication(int ApplicationID)
+        {
+            int ApplicantPersonID = -1;
+            DateTime ApplicationDate = DateTime.Now; int ApplicationTypeID = -1;
+            byte ApplicationStatus = 1; DateTime LastStatusDate = DateTime.Now;
+            float PaidFees = 0; int CreatedByUserID = -1;
+
+            bool IsFound = clsApplicationData.GetApplicationById
+                                (
+                                   ref ApplicationID, ref ApplicantPersonID,
+                                    ref ApplicationDate, ref ApplicationTypeID,
+                                    ref ApplicationStatus, ref LastStatusDate,
+                                    ref PaidFees, ref CreatedByUserID
+                                );
+
+            if (IsFound)
+                //we return new object of that person with the right data
+                return new clsApplication(ApplicationID, ApplicantPersonID,
+                                     ApplicationDate, ApplicationTypeID,
+                                    (enApplicationStatus)ApplicationStatus, LastStatusDate,
+                                     PaidFees, CreatedByUserID);
             else
-            {
                 return null;
-            }
-
-
-        }
-
-        // Create: Add a new application
-        private bool  _Add()
-        {
-
-            this.ApplicationID = clsApplicationData.CreateApplication(this.PersonID,this.ApplicationDate,
-                this.ApplicationTypeID, (byte)this.AppStatus, this.LastStatusDate, this.PaidFees, this.CreatedByUser);
-
-            return this.ApplicationID != 0;
-        }
-
-        // Update: Modify an existing application
-        public bool Update( )
-        {
-            // TODO: Implement the logic for updating an existing application
-            return clsApplicationData.UpdateApplicationById( this.ApplicationID,this.PersonID, this.ApplicationDate, this.ApplicationTypeID,
-              (byte)this.AppStatus, this.LastStatusDate, this.PaidFees, this.CreatedByUser);
-        }
-
-        // Delete: Remove an application by ID
-        public bool Delete(int applicationID)
-        {
-            return clsApplicationData.DeleteApplicationById(applicationID);
-                            
         }
 
         public bool Cancel()
+
         {
-            return clsApplicationData.UpdateStatusByApplicationIDAndNewStatus(this.ApplicationID,2);
+            return clsApplicationData.UpdateStatusByApplicationIDAndNewStatus(ApplicationID, 2);
         }
 
-        public bool setComplete()
-        {
-            return clsApplicationData.UpdateStatusByApplicationIDAndNewStatus(ApplicationID,3);
-        }
+        public bool SetComplete()
 
-
-        public static bool GetActiveApplicationIDForLicense(int applicationPersonID,int licenseClassID)
         {
-            bool Found= clsApplicationData.CheckApplicationByPersonAndLicense(applicationPersonID,licenseClassID);
-            return Found;
-            
-        }
-
-         //OverLoaded-- still empty
-        public static  bool DoesPersonHaveActiveApplication(int applicationTypeID,int applicationtype)
-        {
-            return true;
-        }
-
-        //still empty
-        public bool DoesPersonHaveActiveApplication(int applicationTypeID)
-        {
-            return true;
-        }
-        public static bool DoesApplicationExist(int applicationID)
-        {
-           return clsApplicationData.DoesApplicationExist(applicationID);
+            return clsApplicationData.UpdateStatusByApplicationIDAndNewStatus(ApplicationID, 3);
         }
 
         public bool Save()
         {
             switch (Mode)
             {
-                case enMode.Add:
-                    if (_Add())
+                case enMode.AddNew:
+                    if (_AddNewApplication())
                     {
+
                         Mode = enMode.Update;
                         return true;
                     }
@@ -191,13 +165,50 @@ namespace DVLBuisnesLayer
                     {
                         return false;
                     }
+
                 case enMode.Update:
 
-                    return Update();
-              
+                    return _UpdateApplication();
 
             }
+
             return false;
         }
+
+        public bool Delete()
+        {
+            return clsApplicationData.DeleteApplicationById(this.ApplicationID);
+        }
+
+        public static bool IsApplicationExist(int ApplicationID)
+        {
+            return clsApplicationData.IsApplicationExist(ApplicationID);
+        }
+
+        public static bool DoesPersonHaveActiveApplication(int PersonID, int ApplicationTypeID)
+        {
+            return clsApplicationData.DoesPersonHaveActiveApplication(PersonID, ApplicationTypeID);
+        }
+
+        public bool DoesPersonHaveActiveApplication(int ApplicationTypeID)
+        {
+            return DoesPersonHaveActiveApplication(this.ApplicantPersonID, ApplicationTypeID);
+        }
+
+        public static int GetActiveApplicationID(int PersonID, clsApplication.enApplicationType ApplicationTypeID)
+        {
+            return clsApplicationData.GetActiveApplicationID(PersonID, (int)ApplicationTypeID);
+        }
+
+        public static bool GetActiveApplicationIDForLicenseClass(int PersonID,  int LicenseClassID)
+        {
+            return clsApplicationData.CheckApplicationByPersonAndLicense(PersonID, LicenseClassID);
+        }
+
+        public int GetActiveApplicationID(clsApplication.enApplicationType ApplicationTypeID)
+        {
+            return GetActiveApplicationID(this.ApplicantPersonID, ApplicationTypeID);
+        }
+
     }
 }

@@ -69,17 +69,24 @@ namespace DVLBuisnesLayer
              // Initialize in add mode by default
         }
 
+
+
         // Static method to check if a person exists by NationalNo
         public static bool IsExist(string nationalNo)
         {
             return clsPoepleDataAccess.IsPersonExist(nationalNo);
         }
 
+
+
+
         // Static method to load all data from the person table
         public static DataTable LoadAllData()
         {
             return clsPoepleDataAccess.GetAllDataFromPersonTable();
         }
+
+
 
         // Static method to find a person by ID and return a clsPerson object with loaded data
         public static clsPerson Find(int id)
@@ -100,6 +107,7 @@ namespace DVLBuisnesLayer
             return isFound ? new clsPerson(id, nationalNo, firstName, secondName, thirdName, lastName,
                                            dateOfBirth, gender, address, phone, email, nationalityCountryID, imagePath) : null;
         }
+
 
         public static clsPerson Find(string NationalNo)
         {
@@ -131,6 +139,9 @@ namespace DVLBuisnesLayer
             return ID != 0; // Return true if the ID is valid
         }
 
+
+
+
         // Private method to update an existing person in the database
         private bool _UpdateMode()
         {
@@ -138,11 +149,15 @@ namespace DVLBuisnesLayer
                                                     DateOfBirth, Gender, Address, Phone, Email, NationalityCountryID, ImagePath);
         }
 
+
+
+
         //static method to delete person
-public static bool DeletePerson(int ID)
+        public static bool DeletePerson(int ID)
         {
             return clsPoepleDataAccess.DeletePerson(ID);
         }
+
 
         // Public method to save person data, handling both add and update modes
         public bool Save()
@@ -167,15 +182,6 @@ public static bool DeletePerson(int ID)
             }
         }
 
-        public static  bool IsAssociated(int ID)
-        {
-            if(!clsPoepleDataAccess.IsExistInAnotherTable(ID))
-            {
-                return true;
-            }
-            return false;
 
-
-        }
     }
 }

@@ -31,3 +31,5 @@ C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsForm
 C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.testtest.resources
 C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmLocalLicenseApplication.resources
 C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmMangeLocalLicensApplication.resources
+C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ctrlLocalDrivingLicenseInfo.resources
+C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmVisionTextAppointment.resources

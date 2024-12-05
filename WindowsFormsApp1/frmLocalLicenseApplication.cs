@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using cc;
 using DVLBuisnesLayer;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
@@ -66,7 +65,7 @@ namespace WindowsFormsApp1
                 _LocalDrivngLiceseApplication = new clsLocalDrivingLicenseApplication(); 
                 lblApplicationDate.Text = DateTime.Now.ToString("dd-MM-yyyy");
                 lblApplicationFees.Text = clsApplicationType.
-                    Find((int)clsApplications.enApplicationType.NewDrivingLicense).Fees.ToString();
+                    Find((int)clsApplication.enApplicationType.NewDrivingLicense).Fees.ToString();
                 lblUserCreation.Text = clsUsers.Find(UserName).UserName;
 
             }
@@ -88,7 +87,7 @@ namespace WindowsFormsApp1
             clsLocalDrivingLicenseApplication _LocalDrivngLiceseApplication = new clsLocalDrivingLicenseApplication();
 
             // Set application data
-            _LocalDrivngLiceseApplication.PersonID = ucFilteringData1.PersonID;
+            _LocalDrivngLiceseApplication.ApplicantPersonID = ucFilteringData1.PersonID;
 
             // Validate and parse the application date
             if (DateTime.TryParse(lblApplicationDate.Text, out DateTime applicationDate))
@@ -97,16 +96,17 @@ namespace WindowsFormsApp1
             }
 
             _LocalDrivngLiceseApplication.ApplicationTypeID = clsApplicationType.Find((int)
-                clsApplications.enApplicationType.NewDrivingLicense).ID;
-            _LocalDrivngLiceseApplication.AppStatus = (clsApplications.enApplicationStatus.New);
+                clsApplication.enApplicationType.NewDrivingLicense).ID;
+            _LocalDrivngLiceseApplication.ApplicationStatus = (clsApplication.enApplicationStatus.New);
             _LocalDrivngLiceseApplication.LastStatusDate = DateTime.Now;
             _LocalDrivngLiceseApplication.PaidFees = Convert.ToSingle(lblApplicationFees.Text);
-            _LocalDrivngLiceseApplication.CreatedByUser = clsUsers.Find(UserName).UserID;
+            _LocalDrivngLiceseApplication.CreatedByUserID = clsUsers.Find(UserName).UserID;
             _LocalDrivngLiceseApplication.LicenseClassID = cbLicenseClass.SelectedIndex + 1;
 
 
-           if (clsLocalDrivingLicenseApplication.GetActiveApplicationIDForLicense
-                (_LocalDrivngLiceseApplication.PersonID, _LocalDrivngLiceseApplication.LicenseClassID))
+            if (clsLocalDrivingLicenseApplication.GetActiveApplicationIDForLicenseClass(
+                                                                      _LocalDrivngLiceseApplication.ApplicantPersonID,
+                                                                      _LocalDrivngLiceseApplication.LicenseClassID))
             {
 
                 MessageBox.Show("There Is an Active Application", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -14,15 +14,12 @@ namespace DLMDataAccessLayer
     {
 
 
-        
-        clsPoepleDataAccess(int personID,string nationalNo,string firstName,string secondName,string thirdName,string LastName
-            ,DateTime dateofBirth,int gendor,string address,string phone,string email,string nationalitycountryid,string imagepath)
-        { }
+    
              
         
         public static  bool GetPoepleInfoByID( int personID,ref string nationalNo,ref  string firstName,ref string secondName,
            ref string thirdName,ref string lastName,ref DateTime dateOfBirth,ref int gender,ref string address  ,ref string phone,
-             ref  string email,ref int nationalityCountryID,ref string imagepath)
+             ref  string email,ref int nationalityCountryID,ref string imagePath)
         {
           
 
@@ -52,7 +49,7 @@ namespace DLMDataAccessLayer
                     phone = (string)reader["Phone"];
                     email = (string)reader["Email"];
                     nationalityCountryID = (int)reader["NationalityCountryID"];
-                    imagepath= reader["ImagePath"] != DBNull.Value? (string)reader["ImagePath"]:"";
+                    imagePath= reader["ImagePath"] != DBNull.Value? (string)reader["ImagePath"]:"";
                 }
                 reader.Close();
             }
@@ -73,7 +70,7 @@ namespace DLMDataAccessLayer
 
         public static bool GetPoepleInfoByNationalNo(string nationalNo, ref int personid, ref string firstName, ref string secondName,
            ref string thirdName, ref string lastName, ref DateTime dateOfBirth, ref int gender, ref string address, ref string phone,
-             ref string email, ref int nationalityCountryID, ref string imagepath)
+             ref string email, ref int nationalityCountryID, ref string imagePath)
         {
 
 
@@ -104,7 +101,7 @@ namespace DLMDataAccessLayer
                     phone = (string)reader["Phone"];
                     email = (string)reader["Email"];
                     nationalityCountryID = (int)reader["NationalityCountryID"];
-                    imagepath = reader["ImagePath"] != DBNull.Value ? (string)reader["ImagePath"] : "";
+                    imagePath = reader["ImagePath"] != DBNull.Value ? (string)reader["ImagePath"] : "";
                 }
                 reader.Close();
             }
@@ -121,6 +118,8 @@ namespace DLMDataAccessLayer
 
 
         }
+
+
         public static bool IsPersonExist(string nationalNo)
         {
             bool IsFound = false;
@@ -152,11 +151,32 @@ namespace DLMDataAccessLayer
 
 
        
+
         public static DataTable GetAllDataFromPersonTable()
         {
             DataTable dt = new DataTable();
             SqlConnection connection = new SqlConnection(DataAccessSetting.ConnectionString);
-            string Query = "Select * from People";
+            string Query = @"SELECT 
+    People.PersonID,
+    People.NationalNo,
+    People.FirstName,
+    People.SecondName,
+    People.ThirdName,
+    People.LastName,
+    People.DateOfBirth,
+    
+    CASE
+        WHEN People.Gendor = 0 THEN 'Male'
+        ELSE 'Female'
+    END AS GenderCaption,
+  
+    People.NationalityCountryID,
+    People.Phone,
+    People.Email
+FROM 
+    People
+ORDER BY 
+    People.FirstName;";
 
             SqlCommand cmd = new SqlCommand(Query, connection);
 
@@ -184,7 +204,6 @@ namespace DLMDataAccessLayer
 
         }
 
-
         public static int AddNewPerson( string nationalNo, string firstName, string secondName,
             string thirdName, string lastName, DateTime dateOfBirth, int gender, string address, string phone,
               string email, int nationalityCountryID, string imagepath)
@@ -195,7 +214,7 @@ namespace DLMDataAccessLayer
             string Query = @"Insert INTO People(NationalNo,FirstName,SecondName,
                             ThirdName,LastName,DateOfBirth,Gendor,Address,Phone,Email,NationalityCountryID,ImagePath)  
                             Values(@nationalNo,@firstName,@secondName,@thirdName,@lastName,@dateOfBirth,@gender,
-                                  @address,@phone,@email,@nationalityCountryID,@imagepath)
+                                  @address,@phone,@email,@nationalityCountryID,@imagePath)
                             SELECT SCOPE_IDENTITY()";
 
             SqlCommand command = new SqlCommand(Query, connection);
@@ -328,7 +347,7 @@ namespace DLMDataAccessLayer
 
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
 
@@ -341,31 +360,9 @@ namespace DLMDataAccessLayer
 
        }
 
-        public static bool IsExistInAnotherTable(int ID)
-        {
-            bool IsFound = false;
-            SqlConnection connection= new SqlConnection(DataAccessSetting.ConnectionString);
-            string query = "Select Isfound=1 from Applications where ApplicantPersonID=@ApplicantPersonID";
+      
 
-            SqlCommand cmd = new SqlCommand(query, connection);
-            cmd.Parameters.AddWithValue("@PersonID", ID);
-            try
-            {
-                connection.Open();
-                SqlDataReader Read = cmd.ExecuteReader();
-
-                IsFound = Read.HasRows;
-
-            }catch(Exception )
-            {
-                IsFound = false;
-            }
-            finally
-            {
-                    connection.Close() ;    
-            }
-            return IsFound; 
-
-        }
+        
     }
-}
+ }
+

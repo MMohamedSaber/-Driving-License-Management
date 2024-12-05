@@ -1,4 +1,4 @@
-﻿using cc;
+﻿using DVLBuisnesLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -94,5 +94,24 @@ namespace WindowsFormsApp1
             }
 
         }
+
+        private void sToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sctxSdulStreetTest.Enabled = false;
+            sctxSdulWritinTest.Enabled = false;
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            ctxIssueLicense.Enabled = false;
+            ctxShowLicense.Enabled = false;
+        }
+
+        private void sctxSdulVisionTest_Click(object sender, EventArgs e)
+        {
+            int ApplicationID = (int)DGVLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
+            frmVisionTextAppointment frm = new frmVisionTextAppointment(ApplicationID);
+            frm.ShowDialog();
+            }
     }
 }

@@ -1,14 +1,15 @@
 ﻿using DLMDataAccessLayer;
-using DVLBuisnesLayer;
+
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cc
+namespace DVLBuisnesLayer
 {
-    public class clsLocalDrivingLicenseApplication : clsApplications
+    public class clsLocalDrivingLicenseApplication : clsApplication
     {
         // Enum to define application mode (Add or Update)
         public enum enMode { AddMode = 1, UpdateMode = 2 };
@@ -21,12 +22,16 @@ namespace cc
         public int LicenseClassID { get; set; } // ID for license class
         public clsLicenseClasses LicenseClassInfo; // License class information object
 
+
+
+
+
+
         // Default constructor initializing default values
         public clsLocalDrivingLicenseApplication()
         {
             this.LocalLicenseID = -1; // Indicates an uninitialized ID
-            this.ApplicationID = -1;
-            this.LocalLicenseID = -1;// Indicates an uninitialized ID
+            this.LicenseClassID = -1;// Indicates an uninitialized ID
             Mode = enMode.AddMode;   // Default mode is AddMode
         }
 
@@ -38,18 +43,26 @@ namespace cc
         {
             this.LocalLicenseID = localDrivingLicenseApplicationID;
             this.ApplicationID = applicationID;
-            this.PersonID = applicantPersonID;
+            this.ApplicantPersonID = applicantPersonID;
             this.ApplicationDate = applicationDate;
-            this.ApplicationTypeID = applicationTypeID;
-            this.AppStatus = applicationStatus;
+            this.ApplicationTypeID =(int) applicationTypeID;
+            this.ApplicationStatus = applicationStatus;
             this.LastStatusDate = lastStatusDate;
             this.PaidFees = paidFees;
-            this.CreatedByUser = createdByUserID;
+            this.CreatedByUserID = createdByUserID;
             this.LicenseClassID = licenseClassID;
             this.LicenseClassInfo = clsLicenseClasses.Find(licenseClassID); // Find license class info by ID
 
             // Set mode to Update since the application is being initialized with existing data
             Mode = enMode.UpdateMode;
+        }
+
+
+
+
+        public static DataTable GetAllApplications()
+        {
+            return clsLocalDrivingLicenseApplicationData.GetAllApplications();
         }
 
         // Private method to handle adding a new license application
@@ -81,13 +94,13 @@ namespace cc
             if (IsFound)
             {
                 // Fetch base application details
-                clsApplications Application = clsApplications.FindBaseApplication(ApplicationID);
+                clsApplication Application = clsApplication.FindBaseApplication(ApplicationID);
 
                 // Return a new instance of clsLocalDrivingLicenseApplication with retrieved data
                 return new clsLocalDrivingLicenseApplication
-                    (LocalLicenseDrivingID, Application.ApplicationID, Application.PersonID,
-                     Application.ApplicationDate, Application.ApplicationTypeID, Application.AppStatus,
-                     Application.LastStatusDate, Application.PaidFees, Application.CreatedByUser, LicenseClassID);
+                    (LocalLicenseDrivingID, Application.ApplicationID, Application.ApplicantPersonID,
+                     Application.ApplicationDate, Application.ApplicationTypeID, Application.ApplicationStatus,
+                     Application.LastStatusDate, Application.PaidFees, Application.CreatedByUserID, LicenseClassID);
             }
             else
             {
@@ -108,13 +121,13 @@ namespace cc
             if (IsFound)
             {
                 // Fetch base application details
-                clsApplications Application = clsApplications.FindBaseApplication(ApplicationID);
+                clsApplication Application = clsApplication.FindBaseApplication(ApplicationID);
 
                 // Return a new instance of clsLocalDrivingLicenseApplication with retrieved data
                 return new clsLocalDrivingLicenseApplication
-                    (LocalLicenseDrivingID, Application.ApplicationID, Application.PersonID,
-                     Application.ApplicationDate, Application.ApplicationTypeID, Application.AppStatus,
-                     Application.LastStatusDate, Application.PaidFees, Application.CreatedByUser, LicenseClassID);
+                    (LocalLicenseDrivingID, Application.ApplicationID, Application.ApplicantPersonID,
+                     Application.ApplicationDate, Application.ApplicationTypeID, Application.ApplicationStatus,
+                     Application.LastStatusDate, Application.PaidFees, Application.CreatedByUserID, LicenseClassID);
             }
             else
             {
@@ -127,7 +140,7 @@ namespace cc
         public bool Save()
         {
             // Set the mode in the base class
-            base.Mode = (clsApplications.enMode)Mode;
+            base.Mode = (clsApplication.enMode)Mode;
 
             // Call base Save method and return false if it fails
             if (!base.Save())

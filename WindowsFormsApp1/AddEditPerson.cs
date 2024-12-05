@@ -16,16 +16,24 @@ namespace WindowsFormsApp1
         // Private member variables
         private clsPerson _Person;
         private int _PersonId;
-        private enum Mode { AddMode = 0, UpdateMode = 1 }
-        private Mode _Mode = Mode.AddMode;
+        private enum enMode { AddMode = 0, UpdateMode = 1 }
+        private enMode Mode = enMode.AddMode;
 
+
+        public AddEditPerson( )
+        {
+            InitializeComponent();
+            
+            Mode= enMode.AddMode;
+           
+        }
         // Constructor that initializes the form and determines if adding or updating a person
         public AddEditPerson(int personID)
         {
             InitializeComponent();
             _PersonId = personID;
+            Mode= enMode.UpdateMode;
 
-            _Mode = (_PersonId == -1) ? Mode.AddMode : Mode.UpdateMode;
         }
 
         
@@ -33,46 +41,50 @@ namespace WindowsFormsApp1
 
 
         // Load data into the form fields based on the current mode
-        private void LoadData()
+        private void _ResetDefaultValues()
         {
             _FillCountryInComboBox(); // Populate the country ComboBox
 
-            if (_Mode == Mode.AddMode)
+            if (Mode == enMode.AddMode)
             {
                 lblTitle.Text = "Add New Contact";
                 _Person = new clsPerson();
-                return;
-            }
-
-            // Load existing person data for update mode
-            _Person = clsPerson.Find(_PersonId);
-            lblTitle.Text = $"Update Person = {_Person.ID} ";
-            txtFirstName.Text = _Person.FirstName;
-            txtSecondName.Text = _Person.SecondName;
-            txtThirdName.Text = _Person.ThirdName;
-            txtLastName.Text = _Person.LastName;
-            txtNationalNo.Text = _Person.NationalNo;
-            dtDateOFBirth.Value = _Person.DateOfBirth;
-            txtPhone.Text = _Person.Phone;
-            txtEmail.Text = _Person.Email;
-            txtAddress.Text = _Person.Address;
-
-            // Select the appropriate country in the ComboBox
-            cbCountry.SelectedIndex = cbCountry.FindString(clsCountries.Find(_Person.NationalityCountryID).CountryName);
-
-            // Load profile photo if available
-            if (_Person.ImagePath != null)
+              
+            }else
             {
+                lblTitle.Text = "Update Person";
 
-                try
-                {
-                    ProfilePhoto.Load(_Person.ImagePath);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error loading image: {ex.Message}", "Image Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
+
+            if (rbMale.Checked)
+                ProfilePhoto.Image = Properties.Resources.Male_512;
+            else
+                ProfilePhoto.Image = Properties.Resources.Female_512;
+
+            //hide and show remove photo button
+            lbRemovePhoto.Visible = (ProfilePhoto.ImageLocation != null);
+
+            //set make Date
+            dtDateOFBirth.MaxDate = DateTime.Now.AddYears(-18);
+            dtDateOFBirth.Value = dtDateOFBirth.MaxDate;
+
+            //set Min Date
+            dtDateOFBirth.MinDate= DateTime.Now.AddYears(-100);
+
+            //set default Country
+            cbCountry.SelectedIndex =cbCountry.FindString("Chile");
+
+            txtFirstName.Text = "";
+            txtFirstName.Text = "";
+            txtSecondName.Text = "";
+            txtThirdName.Text = "";
+            txtLastName.Text = "";
+            txtNationalNo.Text = "";
+            txtPhone.Text = "";
+            txtEmail.Text = "";
+            txtAddress.Text = "";
+            rbMale.Checked = true;
+
         }
 
         // Fill the country ComboBox with values from the database
@@ -119,10 +131,60 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void _LoadData()
+        {
+
+            // Load existing person data for update mode
+            _Person = clsPerson.Find(_PersonId);
+
+            if (_Person == null)
+            {
+                MessageBox.Show($"No Person with ID={_PersonId}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                return;
+
+            }
+            lblTitle.Text = $"Update Person = {_Person.ID} ";
+            txtFirstName.Text = _Person.FirstName;
+            txtSecondName.Text = _Person.SecondName;
+            txtThirdName.Text = _Person.ThirdName;
+            txtLastName.Text = _Person.LastName;
+            txtNationalNo.Text = _Person.NationalNo;
+            dtDateOFBirth.Value = _Person.DateOfBirth;
+            txtPhone.Text = _Person.Phone;
+            txtEmail.Text = _Person.Email;
+            txtAddress.Text = _Person.Address;
+
+            if (_Person.Gender == 0)
+                rbMale.Checked = true;
+            else
+                rbFemale.Checked = true;
+
+            cbCountry.SelectedIndex = cbCountry.FindString(clsCountries.Find(_Person.NationalityCountryID).CountryName);
+
+
+
+            // Load profile photo if available
+            if(_Person.ImagePath!="")
+            {
+                ProfilePhoto.ImageLocation=_Person.ImagePath;
+            }
+
+            lbRemovePhoto.Visible = (_Person.ImagePath != "");
+
+
+        }
+
+
         // Event handler for form load
         private void AddEditPerson_Load(object sender, EventArgs e)
         {
-            LoadData();
+            _ResetDefaultValues();
+
+            if (Mode == enMode.UpdateMode)
+                _LoadData();
+
+            
         }
 
         // Save or update person information
@@ -145,7 +207,7 @@ namespace WindowsFormsApp1
 
             if (_Person.Save())
             {
-                MessageBox.Show(_Mode == Mode.AddMode ? "The Person Saved Successfully" : "The Person Updated Successfully");
+                MessageBox.Show(Mode == enMode.AddMode ? "The Person Saved Successfully" : "The Person Updated Successfully");
                 DataBack?.Invoke(_Person);
             }
             else
@@ -213,6 +275,9 @@ namespace WindowsFormsApp1
             this.Close();
         }
 
-        
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
