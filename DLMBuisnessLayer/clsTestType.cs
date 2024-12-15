@@ -10,14 +10,24 @@ namespace DVLBuisnesLayer
 {
     public class clsTestType
     {
-        public int ID { set; get; }
+        public int TestID { set; get; }
         public string TestTitle { set; get; }
         public string TestDescription { set; get; }
         public double Fees { set; get; }
 
+        public enum enTestType { VisionTest=1,WritTest=2,StreetTest=3 }
+
+        clsTestType()
+        {
+            TestID = -1;
+            TestTitle = "";
+            TestDescription = "";
+            Fees = 0;
+
+        }
         clsTestType(int testTypeID, string title, string testDescription, double fees)
         {
-            ID = testTypeID;
+            TestID = testTypeID;
             TestTitle = title;  
             TestDescription= testDescription;
             Fees = fees;
@@ -45,7 +55,7 @@ namespace DVLBuisnesLayer
         private bool _UpdateAppType()
         {
 
-            return clsTestTypeDataAccess.UpdateTestType(this.ID,this.TestTitle,this.TestDescription,this.Fees);
+            return clsTestTypeDataAccess.UpdateTestType(this.TestID,this.TestTitle,this.TestDescription,this.Fees);
         }
         public bool Save()
         {

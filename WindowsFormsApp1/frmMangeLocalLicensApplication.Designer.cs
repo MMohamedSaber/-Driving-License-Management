@@ -140,35 +140,40 @@
             this.ctxShowLicense,
             this.ctxShowPerson});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(246, 180);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(262, 330);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // ctxShowDetails
             // 
             this.ctxShowDetails.Image = global::WindowsFormsApp1.Properties.Resources.PersonDetails_32;
+            this.ctxShowDetails.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ctxShowDetails.Name = "ctxShowDetails";
-            this.ctxShowDetails.Size = new System.Drawing.Size(245, 22);
+            this.ctxShowDetails.Size = new System.Drawing.Size(261, 38);
             this.ctxShowDetails.Text = "Show Application Detailes";
             // 
             // ctxEditApp
             // 
+            this.ctxEditApp.AutoSize = false;
             this.ctxEditApp.Image = global::WindowsFormsApp1.Properties.Resources.edit_321;
+            this.ctxEditApp.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ctxEditApp.Name = "ctxEditApp";
-            this.ctxEditApp.Size = new System.Drawing.Size(245, 22);
+            this.ctxEditApp.Size = new System.Drawing.Size(261, 38);
             this.ctxEditApp.Text = "Edit Application";
             // 
             // ctxDeleteApp
             // 
             this.ctxDeleteApp.Image = global::WindowsFormsApp1.Properties.Resources.Delete_32_2;
+            this.ctxDeleteApp.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ctxDeleteApp.Name = "ctxDeleteApp";
-            this.ctxDeleteApp.Size = new System.Drawing.Size(245, 22);
+            this.ctxDeleteApp.Size = new System.Drawing.Size(261, 38);
             this.ctxDeleteApp.Text = "Delete Application";
             // 
             // ctxCancelApp
             // 
             this.ctxCancelApp.Image = global::WindowsFormsApp1.Properties.Resources.Delete_321;
+            this.ctxCancelApp.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ctxCancelApp.Name = "ctxCancelApp";
-            this.ctxCancelApp.Size = new System.Drawing.Size(245, 22);
+            this.ctxCancelApp.Size = new System.Drawing.Size(261, 38);
             this.ctxCancelApp.Text = "Cancel Application";
             this.ctxCancelApp.Click += new System.EventHandler(this.cancelApplicationToolStripMenuItem_Click);
             // 
@@ -179,10 +184,12 @@
             this.sctxSdulWritinTest,
             this.sctxSdulStreetTest});
             this.ctxScheduleTests.Image = global::WindowsFormsApp1.Properties.Resources.Schedule_Test_32;
+            this.ctxScheduleTests.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ctxScheduleTests.Name = "ctxScheduleTests";
-            this.ctxScheduleTests.Size = new System.Drawing.Size(245, 22);
+            this.ctxScheduleTests.Size = new System.Drawing.Size(261, 38);
             this.ctxScheduleTests.Text = "Sechdual Test";
-            this.ctxScheduleTests.Click += new System.EventHandler(this.sToolStripMenuItem_Click);
+            this.ctxScheduleTests.Click += new System.EventHandler(this.ctxScheduleTests_Click);
+            this.ctxScheduleTests.MouseHover += new System.EventHandler(this.ctxScheduleTests_MouseHover);
             // 
             // sctxSdulVisionTest
             // 
@@ -198,6 +205,7 @@
             this.sctxSdulWritinTest.Name = "sctxSdulWritinTest";
             this.sctxSdulWritinTest.Size = new System.Drawing.Size(180, 22);
             this.sctxSdulWritinTest.Text = "Schedual Writin Test";
+            this.sctxSdulWritinTest.Click += new System.EventHandler(this.sctxSdulWritinTest_Click);
             // 
             // sctxSdulStreetTest
             // 
@@ -205,26 +213,32 @@
             this.sctxSdulStreetTest.Name = "sctxSdulStreetTest";
             this.sctxSdulStreetTest.Size = new System.Drawing.Size(180, 22);
             this.sctxSdulStreetTest.Text = "Schedual Street Test";
+            this.sctxSdulStreetTest.Click += new System.EventHandler(this.sctxSdulStreetTest_Click);
             // 
             // ctxIssueLicense
             // 
+            this.ctxIssueLicense.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ctxIssueLicense.Name = "ctxIssueLicense";
-            this.ctxIssueLicense.Size = new System.Drawing.Size(245, 22);
+            this.ctxIssueLicense.Size = new System.Drawing.Size(261, 38);
             this.ctxIssueLicense.Text = "Issue Driving License (First Time)";
             this.ctxIssueLicense.Click += new System.EventHandler(this.issueToolStripMenuItem_Click);
             // 
             // ctxShowLicense
             // 
+            this.ctxShowLicense.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ctxShowLicense.Name = "ctxShowLicense";
-            this.ctxShowLicense.Size = new System.Drawing.Size(245, 22);
+            this.ctxShowLicense.Size = new System.Drawing.Size(261, 38);
             this.ctxShowLicense.Text = "Show License";
+            this.ctxShowLicense.Click += new System.EventHandler(this.ctxShowLicense_Click);
             // 
             // ctxShowPerson
             // 
             this.ctxShowPerson.Image = global::WindowsFormsApp1.Properties.Resources.PersonLicenseHistory_32;
+            this.ctxShowPerson.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ctxShowPerson.Name = "ctxShowPerson";
-            this.ctxShowPerson.Size = new System.Drawing.Size(245, 22);
+            this.ctxShowPerson.Size = new System.Drawing.Size(261, 38);
             this.ctxShowPerson.Text = "Show Person License History";
+            this.ctxShowPerson.Click += new System.EventHandler(this.ctxShowPerson_Click);
             // 
             // btnAddNewApplication
             // 

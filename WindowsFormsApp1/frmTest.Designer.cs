@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class frmVisionTextAppointment
+    partial class frmTest
     {
         /// <summary>
         /// Required designer variable.
@@ -28,46 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ctrlLocalDrivingLicenseInfo1 = new WindowsFormsApp1.ctrlLocalDrivingLicenseInfo();
+            this.components = new System.ComponentModel.Container();
+            this.lblTestFormTitle = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.lblAppointmentRecord = new System.Windows.Forms.Label();
+            this.btnAddAppointment = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ctxUpdateAppointment = new System.Windows.Forms.ToolStripMenuItem();
+            this.takeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ctrlLocalDrivingLicenseInfo1 = new WindowsFormsApp1.ctrlLocalDrivingLicenseInfo();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lblTestFormTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(184, 77);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(238, 24);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Vision Test Appointment";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.Vision_512;
-            this.pictureBox1.Location = new System.Drawing.Point(244, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(116, 73);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
-            // ctrlLocalDrivingLicenseInfo1
-            // 
-            this.ctrlLocalDrivingLicenseInfo1.Location = new System.Drawing.Point(12, 104);
-            this.ctrlLocalDrivingLicenseInfo1.Name = "ctrlLocalDrivingLicenseInfo1";
-            this.ctrlLocalDrivingLicenseInfo1.Size = new System.Drawing.Size(625, 319);
-            this.ctrlLocalDrivingLicenseInfo1.TabIndex = 9;
+            this.lblTestFormTitle.AutoSize = true;
+            this.lblTestFormTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTestFormTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblTestFormTitle.Location = new System.Drawing.Point(184, 77);
+            this.lblTestFormTitle.Name = "lblTestFormTitle";
+            this.lblTestFormTitle.Size = new System.Drawing.Size(238, 24);
+            this.lblTestFormTitle.TabIndex = 8;
+            this.lblTestFormTitle.Text = "Vision Test Appointment";
             // 
             // label9
             // 
@@ -111,6 +99,16 @@
             this.lblAppointmentRecord.TabIndex = 13;
             this.lblAppointmentRecord.Text = "????";
             // 
+            // btnAddAppointment
+            // 
+            this.btnAddAppointment.Image = global::WindowsFormsApp1.Properties.Resources.AddAppointment_32;
+            this.btnAddAppointment.Location = new System.Drawing.Point(581, 413);
+            this.btnAddAppointment.Name = "btnAddAppointment";
+            this.btnAddAppointment.Size = new System.Drawing.Size(43, 35);
+            this.btnAddAppointment.TabIndex = 16;
+            this.btnAddAppointment.UseVisualStyleBackColor = true;
+            this.btnAddAppointment.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnCancel
             // 
             this.btnCancel.Image = global::WindowsFormsApp1.Properties.Resources.Close_32;
@@ -126,35 +124,74 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // button1
+            // pictureBox1
             // 
-            this.button1.Image = global::WindowsFormsApp1.Properties.Resources.AddAppointment_32;
-            this.button1.Location = new System.Drawing.Point(581, 413);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(43, 35);
-            this.button1.TabIndex = 16;
-            this.button1.UseVisualStyleBackColor = true;
+            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.Vision_512;
+            this.pictureBox1.Location = new System.Drawing.Point(244, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(116, 73);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
-            // frmVisionTextAppointment
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ctxUpdateAppointment,
+            this.takeTestToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(121, 48);
+            // 
+            // ctxUpdateAppointment
+            // 
+            this.ctxUpdateAppointment.Name = "ctxUpdateAppointment";
+            this.ctxUpdateAppointment.Size = new System.Drawing.Size(120, 22);
+            this.ctxUpdateAppointment.Text = "Edit";
+            this.ctxUpdateAppointment.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
+            // 
+            // takeTestToolStripMenuItem
+            // 
+            this.takeTestToolStripMenuItem.Name = "takeTestToolStripMenuItem";
+            this.takeTestToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.takeTestToolStripMenuItem.Text = "Take Test";
+            this.takeTestToolStripMenuItem.Click += new System.EventHandler(this.takeTestToolStripMenuItem_Click);
+            // 
+            // ctrlLocalDrivingLicenseInfo1
+            // 
+            this.ctrlLocalDrivingLicenseInfo1.ApplicationID = "????";
+            this.ctrlLocalDrivingLicenseInfo1.Fees = "????";
+            this.ctrlLocalDrivingLicenseInfo1.LicenseClassText = "????";
+            this.ctrlLocalDrivingLicenseInfo1.LocalLicenseID = "????";
+            this.ctrlLocalDrivingLicenseInfo1.Location = new System.Drawing.Point(12, 104);
+            this.ctrlLocalDrivingLicenseInfo1.Name = "ctrlLocalDrivingLicenseInfo1";
+            this.ctrlLocalDrivingLicenseInfo1.PassedTestText = "????";
+            this.ctrlLocalDrivingLicenseInfo1.Size = new System.Drawing.Size(625, 303);
+            this.ctrlLocalDrivingLicenseInfo1.StatusDateText = "????";
+            this.ctrlLocalDrivingLicenseInfo1.StatusText = "????";
+            this.ctrlLocalDrivingLicenseInfo1.TabIndex = 9;
+            this.ctrlLocalDrivingLicenseInfo1.TypeText = "????";
+            // 
+            // frmTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(649, 611);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAddAppointment);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblAppointmentRecord);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.ctrlLocalDrivingLicenseInfo1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTestFormTitle);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "frmVisionTextAppointment";
+            this.Name = "frmTest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmVisionTextAppointment";
             this.Load += new System.EventHandler(this.frmVisionTextAppointment_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,13 +200,16 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTestFormTitle;
         private ctrlLocalDrivingLicenseInfo ctrlLocalDrivingLicenseInfo1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblAppointmentRecord;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddAppointment;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem ctxUpdateAppointment;
+        private System.Windows.Forms.ToolStripMenuItem takeTestToolStripMenuItem;
     }
 }

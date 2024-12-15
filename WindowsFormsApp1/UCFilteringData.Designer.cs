@@ -108,8 +108,10 @@
             // 
             this.ucPersonDetails1.Location = new System.Drawing.Point(3, 81);
             this.ucPersonDetails1.Name = "ucPersonDetails1";
+            this.ucPersonDetails1.PersonID = "???";
             this.ucPersonDetails1.Size = new System.Drawing.Size(583, 190);
             this.ucPersonDetails1.TabIndex = 1;
+            this.ucPersonDetails1.Load += new System.EventHandler(this.ucPersonDetails1_Load);
             // 
             // UCFilteringData
             // 

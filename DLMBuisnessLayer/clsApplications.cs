@@ -9,11 +9,11 @@ namespace DVLBuisnesLayer
 {
     public class clsApplication
     {
-        public enum enMode { AddNew = 0, Update = 1 };
+        public enum enMode { AddNew = 1, Update = 2};
         public enum enApplicationType
         {
             NewDrivingLicense = 1, RenewDrivingLicense = 2, ReplaceLostDrivingLicense = 3,
-            ReplaceDamagedDrivingLicense = 4, ReleaseDetainedDrivingLicsense = 5, NewInternationalLicense = 6, RetakeTest = 7
+            ReplaceDamagedDrivingLicense = 4, ReleaseDetainedDrivingLicense = 5, NewInternationalLicense = 6, RetakeTest = 8
         };
 
         public enMode Mode = enMode.AddNew;
@@ -21,16 +21,27 @@ namespace DVLBuisnesLayer
 
         public int ApplicationID { set; get; }
         public int ApplicantPersonID { set; get; }
+        public clsPerson ApplicantPersonInfo
+        {
+            get
+            {
+                return clsPerson.Find(ApplicantPersonID);
+            }
+        }
         public string ApplicantFullName
         {
             get
             {
-               return clsPerson.Find(ApplicantPersonID).FirstName;
+               return clsPerson.Find(ApplicantPersonID).FullName;
             }
         }
         public DateTime ApplicationDate { set; get; }
         public int ApplicationTypeID { set; get; }
-        public clsApplicationType ApplicationTypeInfo;
+        public clsApplicationType ApplicationTypeInfo { 
+            get {
+                return clsApplicationType.Find(ApplicationTypeID);
+                }
+        }
         public enApplicationStatus ApplicationStatus { set; get; }
         public string StatusText
         {
@@ -54,7 +65,13 @@ namespace DVLBuisnesLayer
         public DateTime LastStatusDate { set; get; }
         public float PaidFees { set; get; }
         public int CreatedByUserID { set; get; }
-        public clsUsers CreatedByUserInfo;
+        public clsUsers CreatedByUserInfo
+        {
+            get
+            {
+                return clsUsers.Find(CreatedByUserID);
+            }
+        }
 
         public clsApplication()
 
@@ -82,12 +99,10 @@ namespace DVLBuisnesLayer
             this.ApplicantPersonID = ApplicantPersonID;
             this.ApplicationDate = ApplicationDate;
             this.ApplicationTypeID = ApplicationTypeID;
-            this.ApplicationTypeInfo = clsApplicationType.Find(ApplicationTypeID);
             this.ApplicationStatus = ApplicationStatus;
             this.LastStatusDate = LastStatusDate;
             this.PaidFees = PaidFees;
             this.CreatedByUserID = CreatedByUserID;
-            this.CreatedByUserInfo = clsUsers.Find(CreatedByUserID);
             Mode = enMode.Update;
         }
 

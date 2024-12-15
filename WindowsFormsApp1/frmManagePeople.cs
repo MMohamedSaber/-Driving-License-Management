@@ -57,7 +57,7 @@ namespace WindowsFormsApp1
         /// </summary>
         void _LoadAddNewPage()
         {
-            AddEditPerson frm = new AddEditPerson(-1); // -1 indicates adding a new person
+            AddEditPerson frm = new AddEditPerson(); // -1 indicates adding a new person
             frm.ShowDialog(); // Show the form as a dialog
             _RefreshDataToTable(); // Refresh the DataGridView after adding a new person
         }

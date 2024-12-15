@@ -71,6 +71,38 @@ namespace DVLBuisnesLayer
             }
         }
 
+        public static clsLicenseClasses Find(string className)
+        {
+            int LicenseID  = 0;
+            string classDescription = "";
+            int minimumAllowedAge = 0;
+            int defaultValidityLength = 0;
+            float classFees = 0;
+
+            bool isFound = clsLicenseClassesDataAccess.GetLicenseClassByName(
+                className,
+                ref LicenseID,
+                ref classDescription,
+                ref minimumAllowedAge,
+                ref defaultValidityLength,
+                ref classFees);
+
+            if (isFound)
+            {
+                return new clsLicenseClasses(
+                    LicenseID,
+                    className,
+                    classDescription,
+                    minimumAllowedAge,
+                    defaultValidityLength,
+                    classFees);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         // Insert a new License Class using instance properties
         public bool Add()
         {

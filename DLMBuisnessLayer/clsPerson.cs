@@ -19,6 +19,7 @@ namespace DVLBuisnesLayer
         public string SecondName { get; set; }
         public string ThirdName { get; set; }
         public string LastName { get; set; }
+        public string FullName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public int Gender { get; set; }
         public string Address { get; set; }
@@ -26,6 +27,7 @@ namespace DVLBuisnesLayer
         public string Email { get; set; }
         public int NationalityCountryID { get; set; }
         public string ImagePath { get; set; }
+
 
         // Default constructor
         public clsPerson() 
@@ -57,6 +59,7 @@ namespace DVLBuisnesLayer
             SecondName = secondName;
             ThirdName = thirdName;
             LastName = lastName;
+            FullName = $"{FirstName} {SecondName} {ThirdName} {LastName} ";
             DateOfBirth = dateOfBirth;
             Gender = gender;
             Address = address;

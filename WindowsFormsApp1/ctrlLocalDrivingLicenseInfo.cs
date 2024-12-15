@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DVLBuisnesLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,14 +16,11 @@ namespace WindowsFormsApp1
 
 
 
-     
-
-       
 
         // Property for lblApplicant
         public string ApplicantPerson
         {
-          //  get { return lblApplicant.Text; }
+        //  get { return clsPerson.Find(); }
             set { lblApplicant.Text = value; }
         }
 
@@ -43,7 +41,7 @@ namespace WindowsFormsApp1
         // Property for lblDrivingLicenseID
         public string LocalLicenseID
         {
-           // get { return lblDrvingLicenseID.Text; }
+            get { return lblDrvingLicenseID.Text; }
             set { lblDrvingLicenseID.Text = value; }
         }
 
@@ -105,6 +103,22 @@ namespace WindowsFormsApp1
 
 
         private void ctrlLocalDrivingLicenseInfo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbEdithPerson_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+       int personID=clsApplication.FindBaseApplication(int.Parse(ApplicationID)).ApplicantPersonID;
+
+             frmPersonDetails frm = new frmPersonDetails(personID);
+                frm.ShowDialog();
+            
+
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

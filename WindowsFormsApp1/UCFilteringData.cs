@@ -33,6 +33,17 @@ namespace WindowsFormsApp1
             }
         }
 
+
+       
+        public string txtSearch
+        {
+            set
+            {
+                txtSearchKey.Text= value;
+                txtSearchKey.Refresh();
+            }
+        }
+
         // Populates details of a person into the UserControl
         private void _PopulatePersonDetails(clsPerson person)
         {
@@ -89,11 +100,15 @@ namespace WindowsFormsApp1
         }
 
         // Button click handler for search
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            _FindDataToShow(); // Execute search
-        }
 
+            private void btnSearch_Click(object sender, EventArgs e)
+            {
+                _FindDataToShow(); // Execute search
+            }
+
+
+      
+            
         // Button click handler for adding a new person
         private void btnAddNewPerson_Click(object sender, EventArgs e)
         {
@@ -107,5 +122,16 @@ namespace WindowsFormsApp1
         {
             cbFeltringData.SelectedIndex = 0; // Set default selected index
         }
+
+        public void DiableFilter()
+        {
+            groupBox1.Enabled=false;
+                _FindDataToShow();
+        }
+        private void ucPersonDetails1_Load(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }

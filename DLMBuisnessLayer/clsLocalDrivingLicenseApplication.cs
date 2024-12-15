@@ -25,8 +25,6 @@ namespace DVLBuisnesLayer
 
 
 
-
-
         // Default constructor initializing default values
         public clsLocalDrivingLicenseApplication()
         {
@@ -53,7 +51,6 @@ namespace DVLBuisnesLayer
             this.LicenseClassID = licenseClassID;
             this.LicenseClassInfo = clsLicenseClasses.Find(licenseClassID); // Find license class info by ID
 
-            // Set mode to Update since the application is being initialized with existing data
             Mode = enMode.UpdateMode;
         }
 
@@ -65,7 +62,6 @@ namespace DVLBuisnesLayer
             return clsLocalDrivingLicenseApplicationData.GetAllApplications();
         }
 
-        // Private method to handle adding a new license application
         private bool _Add()
         {
             this.LocalLicenseID = clsLocalDrivingLicenseApplicationData
@@ -75,47 +71,41 @@ namespace DVLBuisnesLayer
             return this.LocalLicenseID != 0;
         }
 
-        // Private method to handle updating an existing license application
         private bool _Update()
         {
             return clsLocalDrivingLicenseApplicationData
                 .UpdateLicenseApplication(this.LocalLicenseID, this.ApplicationID, this.LicenseClassID);
         }
 
-        // Find application by license ID
-        public static clsLocalDrivingLicenseApplication FindLocalDrivingLicenseAppByLicenseID(int LocalLicenseDrivingID)
+        public static clsLocalDrivingLicenseApplication FindLocalDrivingLicenseAppByLocalLicenseID(int LocalLicenseDrivingID)
         {
             int ApplicationID = -1, LicenseClassID = -1;
 
-            // Retrieve license application data by license ID
             bool IsFound = clsLocalDrivingLicenseApplicationData.GetLocalDrivingLicenseApplicationByLicenseID
                 (ref LocalLicenseDrivingID, ref ApplicationID, ref LicenseClassID);
 
             if (IsFound)
             {
-                // Fetch base application details
-                clsApplication Application = clsApplication.FindBaseApplication(ApplicationID);
+              //  Fetch base application details
+                  clsApplication Application = clsApplication.FindBaseApplication(ApplicationID);
 
-                // Return a new instance of clsLocalDrivingLicenseApplication with retrieved data
                 return new clsLocalDrivingLicenseApplication
                     (LocalLicenseDrivingID, Application.ApplicationID, Application.ApplicantPersonID,
                      Application.ApplicationDate, Application.ApplicationTypeID, Application.ApplicationStatus,
                      Application.LastStatusDate, Application.PaidFees, Application.CreatedByUserID, LicenseClassID);
+
             }
             else
             {
-                // Return null if not found
                 return null;
             }
         }
-
-        // Find application by application ID
-        public static clsLocalDrivingLicenseApplication FindLocalDrivingLicenseAppByAppID(int ApplicationID)
+        public static clsLocalDrivingLicenseApplication FindLocalDrivingLicenseAppByAppID(int LocalLicenseDrivingID)
         {
-            int LocalLicenseDrivingID = -1, LicenseClassID = -1;
+            int ApplicationID = -1, LicenseClassID = -1;
 
             // Retrieve license application data by application ID
-            bool IsFound = clsLocalDrivingLicenseApplicationData.GetLocalDrivingLicenseApplicationByApplicationID
+            bool IsFound = clsLocalDrivingLicenseApplicationData.GetLocalDrivingLicenseApplicationByLicenseID
                  (ref LocalLicenseDrivingID, ref ApplicationID, ref LicenseClassID);
 
             if (IsFound)
@@ -136,7 +126,6 @@ namespace DVLBuisnesLayer
             }
         }
 
-        // Save method to handle Add or Update logic based on the current Mode
         public bool Save()
         {
             // Set the mode in the base class

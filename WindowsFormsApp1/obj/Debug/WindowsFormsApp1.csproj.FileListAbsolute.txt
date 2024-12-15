@@ -32,4 +32,11 @@ C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsForm
 C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmLocalLicenseApplication.resources
 C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmMangeLocalLicensApplication.resources
 C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ctrlLocalDrivingLicenseInfo.resources
-C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmVisionTextAppointment.resources
+C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmSchedualTest.resources
+C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmTakeATest.resources
+C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmTest.resources
+C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmIssueLicense.resources
+C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ctrlDriverLicenseInfo.resources
+C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmShowLicenseInfo.resources
+C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmShowDriverHistory.resources
+C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ctrDriverLicense.resources

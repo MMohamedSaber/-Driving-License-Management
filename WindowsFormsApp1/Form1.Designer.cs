@@ -51,9 +51,7 @@
             this.userInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -125,6 +123,7 @@
             // 
             // reNewDrivingLicenseToolStripMenuItem
             // 
+            this.reNewDrivingLicenseToolStripMenuItem.Image = global::WindowsFormsApp1.Properties.Resources.Renew_Driving_License_321;
             this.reNewDrivingLicenseToolStripMenuItem.Name = "reNewDrivingLicenseToolStripMenuItem";
             this.reNewDrivingLicenseToolStripMenuItem.Size = new System.Drawing.Size(438, 56);
             this.reNewDrivingLicenseToolStripMenuItem.Text = "ReNew Driving License";
@@ -152,21 +151,24 @@
             this.fffToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.localDrivingLicenseApplicationToolStripMenuItem,
             this.interNationalLicenseApplicationToolStripMenuItem});
+            this.fffToolStripMenuItem2.Image = global::WindowsFormsApp1.Properties.Resources.AddAppointment_321;
             this.fffToolStripMenuItem2.Name = "fffToolStripMenuItem2";
             this.fffToolStripMenuItem2.Size = new System.Drawing.Size(356, 56);
             this.fffToolStripMenuItem2.Text = "Manage Appointment";
             // 
             // localDrivingLicenseApplicationToolStripMenuItem
             // 
+            this.localDrivingLicenseApplicationToolStripMenuItem.Image = global::WindowsFormsApp1.Properties.Resources.New_Driving_License_32;
             this.localDrivingLicenseApplicationToolStripMenuItem.Name = "localDrivingLicenseApplicationToolStripMenuItem";
-            this.localDrivingLicenseApplicationToolStripMenuItem.Size = new System.Drawing.Size(396, 30);
+            this.localDrivingLicenseApplicationToolStripMenuItem.Size = new System.Drawing.Size(430, 56);
             this.localDrivingLicenseApplicationToolStripMenuItem.Text = "LocalDrivingLicenseApplication";
             this.localDrivingLicenseApplicationToolStripMenuItem.Click += new System.EventHandler(this.localDrivingLicenseApplicationToolStripMenuItem_Click);
             // 
             // interNationalLicenseApplicationToolStripMenuItem
             // 
+            this.interNationalLicenseApplicationToolStripMenuItem.Image = global::WindowsFormsApp1.Properties.Resources.International_32;
             this.interNationalLicenseApplicationToolStripMenuItem.Name = "interNationalLicenseApplicationToolStripMenuItem";
-            this.interNationalLicenseApplicationToolStripMenuItem.Size = new System.Drawing.Size(396, 30);
+            this.interNationalLicenseApplicationToolStripMenuItem.Size = new System.Drawing.Size(430, 56);
             this.interNationalLicenseApplicationToolStripMenuItem.Text = "InterNational License Application";
             // 
             // fffToolStripMenuItem
@@ -257,16 +259,6 @@
             this.signOutToolStripMenuItem.Text = "Sign Out";
             this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.IconLogo;
-            this.pictureBox1.Location = new System.Drawing.Point(442, 287);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(416, 170);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -274,7 +266,6 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1252, 602);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Font = new System.Drawing.Font("PT Simple Bold Ruled", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
@@ -286,7 +277,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,7 +290,6 @@
         private System.Windows.Forms.ToolStripMenuItem peopleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accounTSettingToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem userInfoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;

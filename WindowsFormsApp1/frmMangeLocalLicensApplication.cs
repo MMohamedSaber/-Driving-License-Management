@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        DataTable dtLocalDrivingLicenseApplications=clsLocalDrivingLicenseApplication.GetAllApplications();
+        DataTable dtLocalDrivingLicenseApplications = clsLocalDrivingLicenseApplication.GetAllApplications();
 
         private void _RefreshDataToDGV()
         {
@@ -33,7 +33,7 @@ namespace WindowsFormsApp1
             _RefreshDataToDGV();
         }
 
-        private void _ApplayFilter( string FilterBy,object Key )
+        private void _ApplayFilter(string FilterBy, object Key)
         {
             DataView view = dtLocalDrivingLicenseApplications.DefaultView; // Create a DataView for filtering
 
@@ -47,17 +47,17 @@ namespace WindowsFormsApp1
             }
             else
             {
-               
-                
-                    view.RowFilter = $"{FilterBy} LIKE '%{Key}%'"; // Apply partial match filter for text values
 
-                
+
+                view.RowFilter = $"{FilterBy} LIKE '%{Key}%'"; // Apply partial match filter for text values
+
+
             }
         }
         private void cbFilterApplications_SelectedIndexChanged(object sender, EventArgs e)
         {
             // handling hiding Key Search
-            txtSearch.Visible= cbFilterApplications.SelectedIndex == 0 ? false: true ;
+            txtSearch.Visible = cbFilterApplications.SelectedIndex == 0 ? false : true;
             _ApplayFilter(cbFilterApplications.Text, txtSearch.Text);
         }
 
@@ -69,13 +69,18 @@ namespace WindowsFormsApp1
         }
         private void btnAddNewApplication_Click(object sender, EventArgs e)
         {
-            frmLocalLicenseApplication frm = new frmLocalLicenseApplication(-1,"Msaqer77");
+            frmLocalLicenseApplication frm = new frmLocalLicenseApplication(-1, "Msaqer77");
             frm.ShowDialog();
             _RefreshDataToDGV();
         }
 
         private void issueToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            int LocalLicenseID = (int)DGVLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
+
+            frmIssueLicense frm =new frmIssueLicense(LocalLicenseID);
+            frm.ShowDialog();
+            _RefreshDataToDGV();
 
         }
 
@@ -84,9 +89,9 @@ namespace WindowsFormsApp1
             int LocalLicenseID = (int)DGVLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
 
             clsLocalDrivingLicenseApplication LocalDrivingLicenseApplication =
-                  clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseAppByLicenseID(LocalLicenseID);
+                  clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseAppByLocalLicenseID(LocalLicenseID);
 
-            DialogResult Result=MessageBox.Show("Are Sure You Want To Cancel This Application","Confirm",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            DialogResult Result = MessageBox.Show("Are Sure You Want To Cancel This Application", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (Result == DialogResult.Yes)
             {
@@ -95,23 +100,118 @@ namespace WindowsFormsApp1
 
         }
 
-        private void sToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            sctxSdulStreetTest.Enabled = false;
-            sctxSdulWritinTest.Enabled = false;
-        }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
-            ctxIssueLicense.Enabled = false;
-            ctxShowLicense.Enabled = false;
-        }
+            int LocalDrivingLicenseId = (int)DGVLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
 
+            if (clsTest.PassedAllTests(LocalDrivingLicenseId))
+            {
+                ctxIssueLicense.Enabled = true;
+                ctxScheduleTests.Enabled = false;
+                ctxShowLicense.Enabled = false;
+            }
+            else
+            {
+                ctxIssueLicense.Enabled = false;
+                ctxScheduleTests.Enabled = true;
+                ctxShowLicense.Enabled = false;
+
+
+            }
+
+            string LicenseClass = (string)DGVLocalDrivingLicenseApplications.CurrentRow.Cells[1].Value;
+
+
+            int ApplicationID = clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseAppByLocalLicenseID(LocalDrivingLicenseId).ApplicationID;
+
+            if (clsLicense.HaveActiveLicense(clsLicenseClasses.Find(LicenseClass).LicenseClassID,ApplicationID))
+            {
+                ctxIssueLicense.Enabled = false;
+                ctxCancelApp.Enabled = false;
+                ctxCancelApp.Enabled = false;
+                ctxDeleteApp.Enabled = false;
+                ctxEditApp.Enabled = false;
+                ctxShowLicense.Enabled = true;
+
+            }
+        }
         private void sctxSdulVisionTest_Click(object sender, EventArgs e)
         {
-            int ApplicationID = (int)DGVLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
-            frmVisionTextAppointment frm = new frmVisionTextAppointment(ApplicationID);
+            int LocalDrivingLicenseId = (int)DGVLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
+            frmTest frm = new frmTest(LocalDrivingLicenseId, 1);
             frm.ShowDialog();
+            _RefreshDataToDGV();
+
+        }
+
+        private void sctxSdulWritinTest_Click(object sender, EventArgs e)
+        {
+            int LocalDrivingLicenseId = (int)DGVLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
+            frmTest frm = new frmTest(LocalDrivingLicenseId, 2);
+            frm.ShowDialog();
+            _RefreshDataToDGV();
+        }
+        private void ctxScheduleTests_MouseHover(object sender, EventArgs e)
+        {
+            int LocalDrivingLicenseId = (int)DGVLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
+
+            if (clsTest.IsPassedTest(LocalDrivingLicenseId, (int)clsTestType.enTestType.VisionTest))
+            {
+                sctxSdulVisionTest.Enabled = false;
+                sctxSdulWritinTest.Enabled = true;
+                sctxSdulStreetTest.Enabled = false;
             }
+
+            if (clsTest.IsPassedTest(LocalDrivingLicenseId, (int)clsTestType.enTestType.WritTest))
+            {
+                sctxSdulVisionTest.Enabled = false;
+                sctxSdulWritinTest.Enabled = false;
+                sctxSdulStreetTest.Enabled = true; 
+            }
+
+
+            if (clsTest.IsPassedTest(LocalDrivingLicenseId, (int)clsTestType.enTestType.StreetTest))
+            {
+                sctxSdulVisionTest.Enabled = false;
+                sctxSdulWritinTest.Enabled = false;
+                sctxSdulStreetTest.Enabled = false;
+
+               
+            }
+        }
+
+        private void ctxScheduleTests_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sctxSdulStreetTest_Click(object sender, EventArgs e)
+        {
+            int LocalDrivingLicenseId = (int)DGVLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
+
+            frmTest frm = new frmTest(LocalDrivingLicenseId, 3);
+            frm.ShowDialog();
+            _RefreshDataToDGV();
+        }
+
+        private void ctxShowLicense_Click(object sender, EventArgs e)
+        {
+            int LocalDrivingLicenseId = (int)DGVLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
+
+            frmShowLicenseInfo frm = new frmShowLicenseInfo(LocalDrivingLicenseId);
+            frm.ShowDialog();
+        }
+
+        private void ctxShowPerson_Click(object sender, EventArgs e)
+        {
+            int LocalLicenseID = (int)DGVLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
+
+
+            frmShowDriverHistory frm = new frmShowDriverHistory(LocalLicenseID);
+            frm.ShowDialog();
+
+
+        }
     }
 }

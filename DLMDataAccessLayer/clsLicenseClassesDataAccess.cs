@@ -43,7 +43,7 @@ namespace DLMDataAccessLayer
 
         // Get License Class by ID
         public static bool GetLicenseClassByID(
-            int LicenseClassID,
+            int licenseClassID,
             ref string ClassName,
             ref string ClassDescription,
             ref int MinimumAllowedAge,
@@ -55,7 +55,7 @@ namespace DLMDataAccessLayer
             string Query = "SELECT * FROM LicenseClasses WHERE LicenseClassID = @LicenseClassID";
 
             SqlCommand Command = new SqlCommand(Query, connection);
-            Command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+            Command.Parameters.AddWithValue("@LicenseClassID", licenseClassID);
 
             try
             {
@@ -66,8 +66,8 @@ namespace DLMDataAccessLayer
                     isFound = true;
                     ClassName = (string)reader["ClassName"];
                     ClassDescription = (string)reader["ClassDescription"];
-                    MinimumAllowedAge = (int)reader["MinimumAllowedAge"];
-                    DefaultValidityLength = (int)reader["DefaultValidityLength"];
+                    MinimumAllowedAge = Convert.ToInt32(reader["MinimumAllowedAge"]);
+                    DefaultValidityLength = Convert.ToInt32(reader["DefaultValidityLength"]);
                     ClassFees = Convert.ToSingle(reader["ClassFees"]);
                 }
                 reader.Close();
@@ -81,6 +81,51 @@ namespace DLMDataAccessLayer
             }
             return isFound;
         }
+
+
+
+        public static bool GetLicenseClassByName(
+         string ClassName,
+         ref int LicenseClassID,
+         ref string ClassDescription,
+         ref int MinimumAllowedAge,
+         ref int DefaultValidityLength,
+         ref float ClassFees)
+        {
+            bool isFound = false;
+            SqlConnection connection = new SqlConnection(DataAccessSetting.ConnectionString);
+            string Query = "SELECT * FROM LicenseClasses WHERE ClassName = @ClassName";
+
+            SqlCommand Command = new SqlCommand(Query, connection);
+            Command.Parameters.AddWithValue("@ClassName", ClassName);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = Command.ExecuteReader();
+                if (reader.Read())
+                {
+                    isFound = true;
+                    LicenseClassID = (int)reader["LicenseClassID"];
+                    ClassName = (string)reader["ClassName"];
+                    ClassDescription = (string)reader["ClassDescription"];
+                    MinimumAllowedAge = Convert.ToInt32(reader["MinimumAllowedAge"]);
+                    DefaultValidityLength = Convert.ToInt32(reader["DefaultValidityLength"]);
+                    ClassFees = Convert.ToSingle(reader["ClassFees"]);
+                }
+                reader.Close();
+            }
+            catch (Exception e)
+            {
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isFound;
+        }
+
+
 
         // Insert a new License Class
         public static bool AddNewLicenseClass(
