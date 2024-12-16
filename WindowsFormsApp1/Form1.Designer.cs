@@ -120,6 +120,7 @@
             this.interNationalLicenseToolStripMenuItem.Name = "interNationalLicenseToolStripMenuItem";
             this.interNationalLicenseToolStripMenuItem.Size = new System.Drawing.Size(283, 30);
             this.interNationalLicenseToolStripMenuItem.Text = "InterNational License";
+            this.interNationalLicenseToolStripMenuItem.Click += new System.EventHandler(this.interNationalLicenseToolStripMenuItem_Click);
             // 
             // reNewDrivingLicenseToolStripMenuItem
             // 

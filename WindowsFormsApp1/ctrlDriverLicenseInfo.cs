@@ -34,6 +34,10 @@ namespace WindowsFormsApp1
         }
         public string LicenseID
         {
+            get
+            {
+                return lblLicenseID.Text;
+            }
             set
             {
 

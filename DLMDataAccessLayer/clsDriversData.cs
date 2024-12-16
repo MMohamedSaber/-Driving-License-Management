@@ -173,9 +173,8 @@ namespace DLMDataAccessLayer
             SqlConnection connection = new SqlConnection(DataAccessSetting.ConnectionString);
 
             string query = @"SELECT LicenseID,ApplicationID,LicenseClass,IssueDate,ExpirationDate,IsActive 
-                            from Drivers inner Join  Licenses on Licenses.LicenseID =Drivers.DriverID
-                            where Drivers.DriverID	=@DriverID
-                        order by Drivers.DriverID desc;";
+                            from Licenses where DriverID=@DriverID
+                        order by DriverID desc;";
 
 
             SqlCommand command = new SqlCommand(query, connection);

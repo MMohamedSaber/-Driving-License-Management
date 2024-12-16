@@ -47,9 +47,6 @@ namespace WindowsFormsApp1
 
         }
 
-        private void ctrDriverLicense1_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

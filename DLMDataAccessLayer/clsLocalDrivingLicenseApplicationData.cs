@@ -40,7 +40,7 @@ namespace DLMDataAccessLayer
             return IsFound;
         }
 
-        public static bool GetLocalDrivingLicenseApplicationByApplicationID(ref int localLicenseID, ref int applicationID, ref int licenseClassID)
+        public static bool GetLocalDrivingLicenseApplicationByApplicationID(ref int localLicenseID,  int applicationID, ref int licenseClassID)
         {
             bool IsFound = false;
             SqlConnection connection = new SqlConnection(DataAccessSetting.ConnectionString);

@@ -64,6 +64,12 @@
     <Compile Include="ctrlDriverLicenseInfo.Designer.cs">
       <DependentUpon>ctrlDriverLicenseInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="ctrlInterNationalDrivingLicense.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlInterNationalDrivingLicense.Designer.cs">
+      <DependentUpon>ctrlInterNationalDrivingLicense.cs</DependentUpon>
+    </Compile>
     <Compile Include="ctrlLocalDrivingLicenseInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -81,6 +87,12 @@
     </Compile>
     <Compile Include="frmAddNewUser.Designer.cs">
       <DependentUpon>frmAddNewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIssueInternationalDrivingLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIssueInternationalDrivingLicense.Designer.cs">
+      <DependentUpon>frmIssueInternationalDrivingLicense.cs</DependentUpon>
     </Compile>
     <Compile Include="frmIssueLicense.cs">
       <SubType>Form</SubType>
@@ -225,6 +237,9 @@
     <EmbeddedResource Include="ctrlDriverLicenseInfo.resx">
       <DependentUpon>ctrlDriverLicenseInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ctrlInterNationalDrivingLicense.resx">
+      <DependentUpon>ctrlInterNationalDrivingLicense.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ctrlLocalDrivingLicenseInfo.resx">
       <DependentUpon>ctrlLocalDrivingLicenseInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddNewUser.resx">
       <DependentUpon>frmAddNewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIssueInternationalDrivingLicense.resx">
+      <DependentUpon>frmIssueInternationalDrivingLicense.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmIssueLicense.resx">
       <DependentUpon>frmIssueLicense.cs</DependentUpon>
@@ -565,6 +583,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Renew Driving License 321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\International 321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money 321.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

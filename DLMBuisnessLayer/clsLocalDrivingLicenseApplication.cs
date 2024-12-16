@@ -100,13 +100,13 @@ namespace DVLBuisnesLayer
                 return null;
             }
         }
-        public static clsLocalDrivingLicenseApplication FindLocalDrivingLicenseAppByAppID(int LocalLicenseDrivingID)
+        public static clsLocalDrivingLicenseApplication FindLocalDrivingLicenseAppByAppID(int ApplicationID)
         {
-            int ApplicationID = -1, LicenseClassID = -1;
+            int LocalLicenseDrivingID = -1, LicenseClassID = -1;
 
             // Retrieve license application data by application ID
-            bool IsFound = clsLocalDrivingLicenseApplicationData.GetLocalDrivingLicenseApplicationByLicenseID
-                 (ref LocalLicenseDrivingID, ref ApplicationID, ref LicenseClassID);
+            bool IsFound = clsLocalDrivingLicenseApplicationData.GetLocalDrivingLicenseApplicationByApplicationID
+                 (ref LocalLicenseDrivingID,  ApplicationID, ref LicenseClassID);
 
             if (IsFound)
             {

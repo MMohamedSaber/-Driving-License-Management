@@ -369,10 +369,9 @@ namespace DLMDataAccessLayer
                     ActiveApplicationID = AppID;
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-                //Console.WriteLine("Error: " + ex.Message);
-                return ActiveApplicationID;
+                
             }
             finally
             {

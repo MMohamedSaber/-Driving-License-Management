@@ -393,6 +393,16 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap International_321 {
+            get {
+                object obj = ResourceManager.GetObject("International 321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IssueDrivingLicense_32 {
             get {
                 object obj = ResourceManager.GetObject("IssueDrivingLicense 32", resourceCulture);
@@ -466,6 +476,16 @@ namespace WindowsFormsApp1.Properties {
         internal static System.Drawing.Bitmap money_32 {
             get {
                 object obj = ResourceManager.GetObject("money 32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap money_321 {
+            get {
+                object obj = ResourceManager.GetObject("money 321", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -45,7 +45,6 @@
             this.ctrDriverLicense1.Name = "ctrDriverLicense1";
             this.ctrDriverLicense1.Size = new System.Drawing.Size(609, 303);
             this.ctrDriverLicense1.TabIndex = 1;
-            this.ctrDriverLicense1.Load += new System.EventHandler(this.ctrDriverLicense1_Load);
             // 
             // frmShowDriverHistory
             // 

@@ -35,10 +35,13 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgvInterNationalLicense = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInterNationalLicense)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -105,6 +108,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.dgvInterNationalLicense);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -113,6 +117,14 @@
             this.tabPage2.Text = "InterNational";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // dgvInterNationalLicense
+            // 
+            this.dgvInterNationalLicense.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInterNationalLicense.Location = new System.Drawing.Point(6, 6);
+            this.dgvInterNationalLicense.Name = "dgvInterNationalLicense";
+            this.dgvInterNationalLicense.Size = new System.Drawing.Size(575, 189);
+            this.dgvInterNationalLicense.TabIndex = 0;
+            // 
             // ctrDriverLicense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -120,12 +132,13 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ctrDriverLicense";
             this.Size = new System.Drawing.Size(623, 301);
-            this.Load += new System.EventHandler(this.ctrDriverLicense_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInterNationalLicense)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -139,5 +152,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblRecords;
+        private System.Windows.Forms.DataGridView dgvInterNationalLicense;
     }
 }

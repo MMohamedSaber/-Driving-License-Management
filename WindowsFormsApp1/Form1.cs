@@ -96,5 +96,11 @@ namespace WindowsFormsApp1
             frmMangeLocalLicensApplication frm = new frmMangeLocalLicensApplication();
             frm.ShowDialog();
         }
+
+        private void interNationalLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+             frmIssueInternationalDrivingLicense frm =new frmIssueInternationalDrivingLicense();
+            frm.ShowDialog();
+        }
     }
 }

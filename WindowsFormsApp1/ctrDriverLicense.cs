@@ -19,17 +19,17 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void ctrDriverLicense_Load(object sender, EventArgs e)
-        {
-
-
-        }
+        
 
         public void LoadDriverInDgv(int DriverID)
         {
+
             dataGridView3.DataSource = clsDrivers.GetDriverRowByDriverID(DriverID);
+            dgvInterNationalLicense.DataSource = clsInternationalLicense.GetDriverRowByDriverID(DriverID);
         }
 
+        
 
+       
     }
 }
