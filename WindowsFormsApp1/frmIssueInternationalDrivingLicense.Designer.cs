@@ -426,7 +426,6 @@
             this.ctrlInterNationalDrivingLicense1.Name = "ctrlInterNationalDrivingLicense1";
             this.ctrlInterNationalDrivingLicense1.Size = new System.Drawing.Size(621, 358);
             this.ctrlInterNationalDrivingLicense1.TabIndex = 5;
-            this.ctrlInterNationalDrivingLicense1.Load += new System.EventHandler(this.ctrlInterNationalDrivingLicense1_Load);
             // 
             // frmIssueInternationalDrivingLicense
             // 

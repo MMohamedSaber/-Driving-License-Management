@@ -53,7 +53,7 @@ namespace DLMDataAccessLayer
         }
 
         // Get International License by ID
-        public static bool GetInternationalLicenseById(ref int internationalLicenseId, ref int applicationId, ref int driverId,
+        public static bool GetInternationalLicenseById( ref int internationalLicenseId, ref int applicationId, ref int driverId,
             ref int issuedUsingLocalLicenseId, ref DateTime issuedDate, ref DateTime expirationDate, ref bool isActive,
             ref int createdByUser)
         {
@@ -75,11 +75,56 @@ namespace DLMDataAccessLayer
                     internationalLicenseId = (int)reader["InternationalLicenseID"];
                     applicationId = (int)reader["ApplicationID"];
                     driverId = (int)reader["DriverID"];
-                    issuedUsingLocalLicenseId = (int)reader["IssuedUseingLocalDrivingLicenseID"];
-                    issuedDate = (DateTime)reader["IssuedDate"];
+                    issuedUsingLocalLicenseId = (int)reader["IssuedUsingLocalLicenseID"];
+                    issuedDate = (DateTime)reader["IssueDate"];
                     expirationDate = (DateTime)reader["ExpirationDate"];
                     isActive = (bool)reader["IsActive"];
-                    createdByUser = (int)reader["CreatedByUser"];
+                    createdByUser = (int)reader["CreatedByUserID"];
+                }
+
+                reader.Close();
+            }
+            catch (Exception)
+            {
+                isFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isFound;
+        }
+
+
+
+        public static bool GetInternationalLicenseByLocalLicense(ref int internationalLicenseId, ref int applicationId, ref int driverId,
+             int issuedUsingLocalLicenseId, ref DateTime issuedDate, ref DateTime expirationDate, ref bool isActive,
+            ref int createdByUser)
+        {
+            bool isFound = false;
+            SqlConnection connection = new SqlConnection(DataAccessSetting.ConnectionString);
+            string query = @"SELECT * FROM InternationalLicenses WHERE IssuedUsingLocalLicenseID = @IssuedUsingLocalLicenseID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@IssuedUsingLocalLicenseID", issuedUsingLocalLicenseId);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    isFound = true;
+                    internationalLicenseId = (int)reader["InternationalLicenseID"];
+                    applicationId = (int)reader["ApplicationID"];
+                    driverId = (int)reader["DriverID"];
+                    issuedUsingLocalLicenseId = (int)reader["IssuedUsingLocalLicenseID"];
+                    issuedDate = (DateTime)reader["IssueDate"];
+                    expirationDate = (DateTime)reader["ExpirationDate"];
+                    isActive = (bool)reader["IsActive"];
+                    createdByUser = (int)reader["CreatedByUserID"];
                 }
 
                 reader.Close();

@@ -38,6 +38,7 @@
             this.ucFilteringData1.Name = "ucFilteringData1";
             this.ucFilteringData1.Size = new System.Drawing.Size(609, 266);
             this.ucFilteringData1.TabIndex = 0;
+            this.ucFilteringData1.Load += new System.EventHandler(this.ucFilteringData1_Load);
             // 
             // ctrDriverLicense1
             // 

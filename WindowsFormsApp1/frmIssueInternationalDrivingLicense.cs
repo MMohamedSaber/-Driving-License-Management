@@ -114,6 +114,9 @@ namespace WindowsFormsApp1
             if (clsInternationalLicense.IsInternationalLicenseExist(_currentLicense.LicenseID))
             {
                 ShowError("The driver already has an international license.");
+              _internationalLicense= clsInternationalLicense.FindByLocalLicense(_currentLicense.LicenseID);
+                lblInterNationalAppID.Text =_internationalLicense.ApplicationID.ToString();
+                lblInterNationalLicenseID.Text=_internationalLicense.InternationalLicenseID.ToString();
                 return false;
             }
 
@@ -129,7 +132,7 @@ namespace WindowsFormsApp1
         // Create a new international license instance with the relevant data
         private void CreateInternationalLicense()
         {
-           
+
 
             _internationalLicense = new clsInternationalLicense
             {
@@ -142,17 +145,7 @@ namespace WindowsFormsApp1
                 CreatedByUser = _currentLicense.CreatedByUserID
             };
 
-            // Initialize LocalLiense after _internationalLicense is created
-            LocalLiense = clsLocalDrivingLicenseApplication.
-                FindLocalDrivingLicenseAppByAppID(_internationalLicense.ApplicationID);
-            if (LocalLiense != null)
-            {
-                LocallicenseID = LocalLiense.LocalLicenseID;
-            }
-            else
-            {
-                ShowError("Failed to load local driving license application.");
-            }
+            
         }
 
         // Display an error message to the user
@@ -167,27 +160,45 @@ namespace WindowsFormsApp1
             MessageBox.Show(message, "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void ctrlInterNationalDrivingLicense1_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-
-
         {
-            
 
-
-            frmShowDriverHistory frm =new frmShowDriverHistory(LocallicenseID);
-            frm.ShowDialog();
+            // Check if lblInterNationalAppID.Text is a valid integer
+            if (int.TryParse(lblInterNationalAppID.Text, out int appID))
+            {
+                // If valid, open the driver history form
+                frmShowDriverHistory frm = new frmShowDriverHistory(appID);
+                frm.ShowDialog();
+            }
+            else
+            {
+                // If not valid, show an error message
+                ShowError($"There is no license with ID: {lblInterNationalAppID.Text}. Please ensure the license application ID is correct.");
+            }
         }
 
         private void linkLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
-            frmShowDriverHistory frm = new frmShowDriverHistory(LocallicenseID);
-            frm.ShowDialog();
+
+
+
+            // Check if lblInterNationalLicenseID.Text is a valid integer
+            if (int.TryParse(lblInterNationalLicenseID.Text, out int licenseID))
+            {
+                // If valid, open the international driver info form
+                frmShowIntrenationDriverInfo frm = new frmShowIntrenationDriverInfo(licenseID);
+                frm.ShowDialog();
+            }
+            else
+            {
+                // If not valid, show an error message
+                ShowError($"There is no license with ID: {lblInterNationalLicenseID.Text}. Please ensure the international license ID is correct.");
+            }
+
+
         }
     }
 }

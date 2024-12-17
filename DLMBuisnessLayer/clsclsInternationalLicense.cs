@@ -162,6 +162,50 @@ namespace DVLBuisnesLayer
             }
         }
 
+
+
+        public static clsInternationalLicense FindByLocalLicense(int LocalLicense)
+        {
+            int applicationID = -1;
+            int driverID = -1;
+            int InterNationalID = -1;
+            DateTime issuedDate = DateTime.Now;
+            DateTime expirationDate = DateTime.Now;
+            bool isActive = true;
+            int createdByUser = -1;
+
+            bool isFound = clsInternationalLicenseData.GetInternationalLicenseByLocalLicense(ref InterNationalID,
+                ref applicationID,
+                ref driverID,
+                 LocalLicense,
+                ref issuedDate,
+                ref expirationDate,
+                ref isActive,
+                ref createdByUser
+            );
+
+            if (isFound)
+            {
+                return new clsInternationalLicense(
+                    InterNationalID,
+                    applicationID,
+                    driverID,
+                    LocalLicense,
+                    issuedDate,
+                    expirationDate,
+                    isActive,
+                    createdByUser
+                );
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
+
+
         // Check if an international license exists by ID
         public static bool IsInternationalLicenseExist(int LocalLicenseID)
         {
@@ -178,5 +222,10 @@ namespace DVLBuisnesLayer
         {
             return clsInternationalLicenseData.GetDriverRowByDriverID(DriverID);
         }
+public static DataTable GetAllInterNationalLicense()
+        {
+            return clsInternationalLicenseData.GetAllInternationalLicenses();
+        }
+
     }
 }

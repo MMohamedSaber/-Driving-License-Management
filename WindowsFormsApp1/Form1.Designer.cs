@@ -97,6 +97,7 @@
             this.fffToolStripMenuItem1.Name = "fffToolStripMenuItem1";
             this.fffToolStripMenuItem1.Size = new System.Drawing.Size(356, 56);
             this.fffToolStripMenuItem1.Text = "Driving License Services";
+            this.fffToolStripMenuItem1.Click += new System.EventHandler(this.fffToolStripMenuItem1_Click);
             // 
             // newDrivingLicenseToolStripMenuItem
             // 
@@ -171,6 +172,7 @@
             this.interNationalLicenseApplicationToolStripMenuItem.Name = "interNationalLicenseApplicationToolStripMenuItem";
             this.interNationalLicenseApplicationToolStripMenuItem.Size = new System.Drawing.Size(430, 56);
             this.interNationalLicenseApplicationToolStripMenuItem.Text = "InterNational License Application";
+            this.interNationalLicenseApplicationToolStripMenuItem.Click += new System.EventHandler(this.interNationalLicenseApplicationToolStripMenuItem_Click);
             // 
             // fffToolStripMenuItem
             // 

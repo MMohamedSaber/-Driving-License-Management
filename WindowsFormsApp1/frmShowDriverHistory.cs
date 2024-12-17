@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
     public partial class frmShowDriverHistory : Form
     {
 
-        int LocalDrivingLicenseAppID = -1;
+        int _applicationID = -1;
         clsLocalDrivingLicenseApplication LocalDrivingLicenseApplication;
         clsLicense License;
         public frmShowDriverHistory()
@@ -24,10 +24,10 @@ namespace WindowsFormsApp1
 
         } 
         
-        public frmShowDriverHistory(int localDrivingLicenseApplicaionID)
+        public frmShowDriverHistory(int ApplicationID)
         {
             InitializeComponent();
-            LocalDrivingLicenseAppID = localDrivingLicenseApplicaionID;
+            _applicationID = ApplicationID;
         }
 
 
@@ -37,7 +37,8 @@ namespace WindowsFormsApp1
         private void frmShowDriverHistory_Load(object sender, EventArgs e)
         {
              LocalDrivingLicenseApplication =
-                  clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseAppByLocalLicenseID(LocalDrivingLicenseAppID);
+                  clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseAppByAppID(_applicationID);
+
             License=clsLicense.FindByApplicationID(LocalDrivingLicenseApplication.ApplicationID);
 
             ucFilteringData1.txtSearch = LocalDrivingLicenseApplication.ApplicantPersonInfo.NationalNo.ToString();
@@ -47,6 +48,9 @@ namespace WindowsFormsApp1
 
         }
 
-        
+        private void ucFilteringData1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

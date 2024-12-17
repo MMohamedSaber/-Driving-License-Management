@@ -42,3 +42,6 @@ C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsForm
 C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ctrDriverLicense.resources
 C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ctrlInterNationalDrivingLicense.resources
 C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmIssueInternationalDrivingLicense.resources
+C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ctrlDriverInternationalLicenseInfo.resources
+C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmShowIntrenationDriverInfo.resources
+C:\Users\moham\Driving-License-Management\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmShowInternationalLicense.resources

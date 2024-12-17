@@ -58,6 +58,12 @@
     <Compile Include="ctrDriverLicense.Designer.cs">
       <DependentUpon>ctrDriverLicense.cs</DependentUpon>
     </Compile>
+    <Compile Include="ctrlDriverInternationalLicenseInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlDriverInternationalLicenseInfo.Designer.cs">
+      <DependentUpon>ctrlDriverInternationalLicenseInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="ctrlDriverLicenseInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -166,6 +172,18 @@
     <Compile Include="frmShowDriverHistory.Designer.cs">
       <DependentUpon>frmShowDriverHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmShowInternationalLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShowInternationalLicense.Designer.cs">
+      <DependentUpon>frmShowInternationalLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShowIntrenationDriverInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShowIntrenationDriverInfo.Designer.cs">
+      <DependentUpon>frmShowIntrenationDriverInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmShowLicenseInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +252,9 @@
     <EmbeddedResource Include="ctrDriverLicense.resx">
       <DependentUpon>ctrDriverLicense.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ctrlDriverInternationalLicenseInfo.resx">
+      <DependentUpon>ctrlDriverInternationalLicenseInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ctrlDriverLicenseInfo.resx">
       <DependentUpon>ctrlDriverLicenseInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -287,6 +308,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmShowDriverHistory.resx">
       <DependentUpon>frmShowDriverHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShowInternationalLicense.resx">
+      <DependentUpon>frmShowInternationalLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShowIntrenationDriverInfo.resx">
+      <DependentUpon>frmShowIntrenationDriverInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmShowLicenseInfo.resx">
       <DependentUpon>frmShowLicenseInfo.cs</DependentUpon>

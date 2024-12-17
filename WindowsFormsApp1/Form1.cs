@@ -102,5 +102,16 @@ namespace WindowsFormsApp1
              frmIssueInternationalDrivingLicense frm =new frmIssueInternationalDrivingLicense();
             frm.ShowDialog();
         }
+
+        private void interNationalLicenseApplicationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmShowInternationalLicense frm = new frmShowInternationalLicense();
+            frm.ShowDialog();
+        }
+
+        private void fffToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
