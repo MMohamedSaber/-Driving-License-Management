@@ -198,6 +198,12 @@ namespace DVLBuisnesLayer
             return false;
         }
 
+        public static  bool IsLicenseActive(int licenseID)
+        {
+
+            return clsLicenseData.ActiveLicenseByLicenseID(licenseID);
+
+        }
 
     }
 }

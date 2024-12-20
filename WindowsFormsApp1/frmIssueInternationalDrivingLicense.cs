@@ -200,5 +200,10 @@ namespace WindowsFormsApp1
 
 
         }
+
+        private void ctrlInterNationalDrivingLicense1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -129,12 +129,14 @@
             this.reNewDrivingLicenseToolStripMenuItem.Name = "reNewDrivingLicenseToolStripMenuItem";
             this.reNewDrivingLicenseToolStripMenuItem.Size = new System.Drawing.Size(438, 56);
             this.reNewDrivingLicenseToolStripMenuItem.Text = "ReNew Driving License";
+            this.reNewDrivingLicenseToolStripMenuItem.Click += new System.EventHandler(this.reNewDrivingLicenseToolStripMenuItem_Click);
             // 
             // replacementForDamagedOrLostToolStripMenuItem
             // 
             this.replacementForDamagedOrLostToolStripMenuItem.Name = "replacementForDamagedOrLostToolStripMenuItem";
             this.replacementForDamagedOrLostToolStripMenuItem.Size = new System.Drawing.Size(438, 56);
             this.replacementForDamagedOrLostToolStripMenuItem.Text = "Replacement For Damaged or Lost";
+            this.replacementForDamagedOrLostToolStripMenuItem.Click += new System.EventHandler(this.replacementForDamagedOrLostToolStripMenuItem_Click);
             // 
             // releaseToolStripMenuItem
             // 

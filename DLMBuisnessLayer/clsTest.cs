@@ -23,7 +23,6 @@ namespace DVLBuisnesLayer
         public int CreatedByUserID { set; get; }
 
         public clsTest()
-
         {
             this.TestID = -1;
             this.TestAppointmentID = -1;

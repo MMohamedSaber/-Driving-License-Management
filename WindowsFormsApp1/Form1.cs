@@ -113,5 +113,18 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void reNewDrivingLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRenewLicenseApplication frm = new frmRenewLicenseApplication();
+            frm.ShowDialog();
+
+        }
+
+        private void replacementForDamagedOrLostToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReplcementOrDamaged frm = new frmReplcementOrDamaged();
+            frm.ShowDialog();
+        }
     }
 }

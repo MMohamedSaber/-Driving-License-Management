@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DLMDataAccessLayer
 {
@@ -51,7 +53,6 @@ namespace DLMDataAccessLayer
             }
             catch (Exception ex)
             {
-                throw new Exception("Error adding new license: " + ex.Message);
             }
             finally
             {
@@ -317,6 +318,7 @@ namespace DLMDataAccessLayer
 
             return dt;
         }
+
         public static bool IsLicenseExist(int licenseClassID, int ApplicationID)
         {
             bool isFound = false;
@@ -350,5 +352,36 @@ namespace DLMDataAccessLayer
         }
 
 
+      public static bool  ActiveLicenseByLicenseID(int licenseID)
+        {
+            bool isFound = false;
+            SqlConnection connection = new SqlConnection(DataAccessSetting.ConnectionString);
+            string query = @"SELECT 1 FROM Licenses WHERE LicenseID= @LicenseID  
+                                                      and IsActive=1";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@LicenseID", licenseID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                isFound = reader.HasRows;
+                reader.Close();
+            }
+            catch (Exception)
+            {
+                isFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isFound;
+
+
+        }
     }
 }
