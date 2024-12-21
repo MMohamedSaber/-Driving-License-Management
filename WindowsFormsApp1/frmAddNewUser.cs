@@ -19,6 +19,11 @@ namespace WindowsFormsApp1
         private int _PersonID; // Stores the ID of the person
         clsUsers _User = new clsUsers(); // Instance of the clsUsers business layer
 
+
+        public frmAddNewUser()
+        {
+                
+        }
         // Constructor to initialize the form
         public frmAddNewUser(int UserID)
         {
@@ -120,7 +125,7 @@ namespace WindowsFormsApp1
         // Event: Open person edit link
         private void button3_Click(object sender, EventArgs e)
         {
-           AddEditPerson frm=new AddEditPerson(-1);
+           AddEditPerson frm=new AddEditPerson();
             frm.DataBack+= _PopulatePersonDetails;
             frm.ShowDialog();
 

@@ -181,5 +181,17 @@ namespace WindowsFormsApp1
             frm.ShowDialog();
         
         }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
+       
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

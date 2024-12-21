@@ -126,5 +126,23 @@ namespace WindowsFormsApp1
             frmReplcementOrDamaged frm = new frmReplcementOrDamaged();
             frm.ShowDialog();
         }
+
+        private void detainLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDetainLicense frm = new frmDetainLicense();
+            frm.ShowDialog();
+        }
+
+        private void manageDetainedLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManageDetainLicense frm = new frmManageDetainLicense();
+            frm.ShowDialog(); 
+        }
+
+        private void releaseDetainedLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReleaseDetainedLicense frm = new frmReleaseDetainedLicense();
+            frm.ShowDialog();
+        }
     }
 }

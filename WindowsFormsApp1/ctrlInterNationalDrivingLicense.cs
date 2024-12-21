@@ -52,7 +52,8 @@ namespace WindowsFormsApp1
                     if (License.IssueReason == 1)
                         ctrlDriverLicenseInfo1.IssueReason = "First Time";
                     else
-                        ctrlDriverLicenseInfo1.IssueReason = "Second Time";
+                        ctrlDriverLicenseInfo1.IssueReason = "Renew License";
+
 
                     ctrlDriverLicenseInfo1.Notes = License.Notes;
 
@@ -67,7 +68,12 @@ namespace WindowsFormsApp1
                     ctrlDriverLicenseInfo1.DriverID = License.DriverID.ToString();
                     ctrlDriverLicenseInfo1.ExpirationDate = License.ExpirationDate.ToString("dd/MM/yyyy");
 
-                    ctrlDriverLicenseInfo1.IsDetained = "No";
+                    //if (clsDetain.FindDetainByLicenseID(licenseID).IsReleased == true)
+                    //    ctrlDriverLicenseInfo1.IsDetained = "No";
+                    //else
+                        ctrlDriverLicenseInfo1.IsDetained = "No";
+
+
                     ctrlDriverLicenseInfo1.mainphoto = LocalDrivingLicenseApplication.ApplicantPersonInfo.ImagePath;
 
                     // Raise the event to notify listeners (such as the form) about the updated License ID
