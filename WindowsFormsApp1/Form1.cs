@@ -144,5 +144,11 @@ namespace WindowsFormsApp1
             frmReleaseDetainedLicense frm = new frmReleaseDetainedLicense();
             frm.ShowDialog();
         }
+
+        private void driversToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManageDriver frm = new frmManageDriver();
+            frm.ShowDialog();
+        }
     }
 }

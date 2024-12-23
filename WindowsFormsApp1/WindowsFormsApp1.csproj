@@ -136,6 +136,12 @@
     <Compile Include="frmManageDetainLicense.Designer.cs">
       <DependentUpon>frmManageDetainLicense.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmManageDriver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageDriver.Designer.cs">
+      <DependentUpon>frmManageDriver.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmManagePeople.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -320,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmManageDetainLicense.resx">
       <DependentUpon>frmManageDetainLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageDriver.resx">
+      <DependentUpon>frmManageDriver.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmManagePeople.resx">
       <DependentUpon>frmManagePeople.cs</DependentUpon>
@@ -700,6 +709,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\License View 321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo Final.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Driver Main.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

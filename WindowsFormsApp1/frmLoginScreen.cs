@@ -30,7 +30,7 @@ namespace WindowsFormsApp1
                    // int PersonID= clsUsers.Find(UserName).PersonID;
                     Form1 frm = new Form1(clsUsers.Find(UserName).PersonID,clsUsers.Find(UserName).UserName);
                     frm.ShowDialog();
-                    this.Visible=false;
+                    this.Close();
                 }
                 else
                 {
