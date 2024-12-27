@@ -1,4 +1,5 @@
 ﻿using DVLBuisnesLayer;
+using DVLD;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -163,6 +164,8 @@ namespace WindowsFormsApp1
         // Event handler for the "Show Details" context menu item
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+            //Here
             frmUserDetails frm = new frmUserDetails((int)dgvUsers.CurrentRow.Cells[1].Value); // Open user details form
             frm.Show(); // Show the form
         }

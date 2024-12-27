@@ -37,7 +37,6 @@
             this.ucUserInformation1.Name = "ucUserInformation1";
             this.ucUserInformation1.Size = new System.Drawing.Size(608, 304);
             this.ucUserInformation1.TabIndex = 0;
-            this.ucUserInformation1.Load += new System.EventHandler(this.ucUserInformation1_Load);
             // 
             // frmUserDetails
             // 

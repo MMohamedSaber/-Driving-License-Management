@@ -1,58 +1,76 @@
 ﻿using DVLBuisnesLayer;
+using DVLD;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
     public partial class frmUserDetails : Form
     {
-        int _personID;
-        clsPerson _persons;
-        clsUsers _users;
-        public frmUserDetails(int personId)
+        int _userID;
+        clsUsers User =new clsUsers();
+        public frmUserDetails(int UserID)
         {
             InitializeComponent();
-            _personID=personId;
-        }
-
-        private void ucUserInformation1_Load(object sender, EventArgs e)
-        {
-
-        }
-        void LoadUserDetails()
-        {
-            _persons = clsPerson.Find(_personID);
-            _users = clsUsers.Find(_personID);
-
-           // Populate person details
-             ucUserInformation1.PersonID = _persons.ID.ToString();
-            ucUserInformation1.FullName = $"{_persons.FirstName} {_persons.SecondName} {_persons.ThirdName} {_persons.LastName}";
-            ucUserInformation1.NationalNo = _persons.NationalNo;
-            ucUserInformation1.Email = _persons.Email;
-            ucUserInformation1.Address = _persons.Address;
-            ucUserInformation1.Gender = _persons.Gender.ToString();
-            ucUserInformation1.Phone = _persons.Phone;
-            ucUserInformation1.DateOfBirth = _persons.DateOfBirth;
-            ucUserInformation1.Country = clsCountries.Find(_persons.NationalityCountryID).CountryName;
-            ucUserInformation1.ImagePath = _persons.ImagePath;
-            // Populate user details
-            ucUserInformation1.UserID = _users.UserID.ToString();
-            ucUserInformation1.UserName = _users.UserName;
-            ucUserInformation1.IsActive = _users.IsActive ? "Yes" : "No";
-
-
+            _userID = UserID;
         }
 
         private void frmUserDetails_Load(object sender, EventArgs e)
         {
-            LoadUserDetails();
+            try
+            {
+                LoadUserDetails();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while loading user details: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void LoadUserDetails()
+        {
+            if (clsGlobal.CurrentUser == null || clsGlobal.CurrentUser.PersonInfo == null)
+            {
+                MessageBox.Show("No user information available.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            PopulatePersonDetails();
+            PopulateUserDetails();
+        }
+
+        private void PopulatePersonDetails()
+        {
+            User = clsUsers.Find(_userID);
+
+            if (User != null)
+            {
+                ucUserInformation1.PersonID = User.PersonInfo.ID.ToString();
+                ucUserInformation1.FullName =
+                    $"{User.PersonInfo.FirstName} " +
+                    $"{User.PersonInfo.SecondName} " +
+                    $"{User.PersonInfo.ThirdName} " +
+                    $"{User.PersonInfo.LastName}";
+                ucUserInformation1.NationalNo = User.PersonInfo.NationalNo;
+                ucUserInformation1.Email = User.PersonInfo.Email;
+                ucUserInformation1.Address = User.PersonInfo.Address;
+                ucUserInformation1.Gender = User.PersonInfo.Gender.ToString();
+                ucUserInformation1.Phone = User.PersonInfo.Phone;
+                ucUserInformation1.DateOfBirth = User.PersonInfo.DateOfBirth;
+                ucUserInformation1.Country = clsCountries.Find(User.PersonInfo.NationalityCountryID)?.CountryName ?? "Unknown";
+                ucUserInformation1.ImagePath = User.PersonInfo.ImagePath;
+            }
+        }
+
+        private void PopulateUserDetails()
+        {
+            if (User != null)
+            {
+                ucUserInformation1.UserID = User.UserID.ToString();
+                ucUserInformation1.UserName = User.UserName;
+                ucUserInformation1.IsActive = User.IsActive ? "Yes" : "No";
+            }
         }
     }
 }

@@ -48,6 +48,62 @@ namespace DLMDataAccessLayer
 
         }
 
+        //New Editing
+        public static bool GetUserInfoByUsernameAndPassword(string UserName, string Password,
+            ref int UserID, ref int PersonID, ref bool IsActive)
+        {
+            bool isFound = false;
+
+            SqlConnection connection = new SqlConnection(DataAccessSetting.ConnectionString);
+
+            string query = "SELECT * FROM Users WHERE Username = @Username and Password=@Password;";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@Username", UserName);
+            command.Parameters.AddWithValue("@Password", Password);
+
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    // The record was found
+                    isFound = true;
+                    UserID = (int)reader["UserID"];
+                    PersonID = (int)reader["PersonID"];
+                    UserName = (string)reader["UserName"];
+                    Password = (string)reader["Password"];
+                    IsActive = (bool)reader["IsActive"];
+
+
+                }
+                else
+                {
+                    // The record was not found
+                    isFound = false;
+                }
+
+                reader.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine("Error: " + ex.Message);
+
+                isFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isFound;
+        }
 
         public static bool IsCorrectPassword(string username, string password)
         {

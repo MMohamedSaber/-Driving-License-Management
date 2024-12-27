@@ -7,45 +7,50 @@ namespace WindowsFormsApp1
 {
     public partial class frmChangePassword : Form
     {
-        int _PersonID; // Stores the ID of the person
+        int  _UerID; // Stores the ID of the person
         clsUsers _users; // Instance of the clsUsers business layer
         clsPerson _persons; // Instance of the clsPerson business layer
 
         // Constructor to initialize the form and set PersonID
-        public frmChangePassword(int personID)
+        public frmChangePassword(int userID)
         {
             InitializeComponent();
-            _PersonID = personID;
+            _UerID = userID;
         }
 
         // Method to load user and person details into the user interface
         private void _loadUserDetails()
         {
-            _persons = clsPerson.Find(_PersonID); // Retrieve person details
-            _users = clsUsers.Find(_PersonID);   // Retrieve user details
-
-            if (_persons != null && _users != null)
+            // Retrieve user details
+            _users = clsUsers.Find(_UerID);
+            if (_users != null)
             {
                 // Populate person details
-                ucUserInformation1.PersonID = _persons.ID.ToString();
-                ucUserInformation1.FullName = $"{_persons.FirstName} {_persons.SecondName} {_persons.ThirdName} {_persons.LastName}";
-                ucUserInformation1.NationalNo = _persons.NationalNo;
-                ucUserInformation1.Email = _persons.Email;
-                ucUserInformation1.Address = _persons.Address;
-                ucUserInformation1.Gender = _persons.Gender.ToString();
-                ucUserInformation1.Phone = _persons.Phone;
-                ucUserInformation1.DateOfBirth = _persons.DateOfBirth;
-                ucUserInformation1.Country = clsCountries.Find(_persons.NationalityCountryID).CountryName;
-                ucUserInformation1.ImagePath = _persons.ImagePath;
+                ucUserInformation1.PersonID = _users.PersonInfo.ID.ToString();
+                ucUserInformation1.FullName = 
+                    $"{_users.PersonInfo.FirstName} " +
+                    $"{_users.PersonInfo.SecondName}" +
+                    $" {_users.PersonInfo.ThirdName}" +
+                    $" {_users.PersonInfo.LastName}";
+                ucUserInformation1.NationalNo = _users.PersonInfo.NationalNo;
+                ucUserInformation1.Email = _users.PersonInfo.Email;
+                ucUserInformation1.Address = _users.PersonInfo.Address;
+                ucUserInformation1.Gender = _users.PersonInfo.Gender.ToString();
+                ucUserInformation1.Phone = _users.PersonInfo.Phone;
+                ucUserInformation1.DateOfBirth = _users.PersonInfo.DateOfBirth;
+                ucUserInformation1.Country = clsCountries.Find(_users.PersonInfo.NationalityCountryID).CountryName;
+                ucUserInformation1.ImagePath = _users.PersonInfo.ImagePath;
 
                 
                     // Populate user details
-                    ucUserInformation1.UserID = _users.UserID.ToString();
-                    ucUserInformation1.UserName = _users.UserName;
-                    ucUserInformation1.IsActive = _users.IsActive ? "Yes" : "No";
+                    ucUserInformation1.UserID   =  _users.UserID.ToString();
+                    ucUserInformation1.UserName =  _users.UserName;
+                    ucUserInformation1.IsActive =  _users.IsActive ? "Yes" : "No";
                 
             }
         }
+
+
 
         // Event handler: Load user details when the control is loaded
         private void ucUserInformation1_Load(object sender, EventArgs e)
@@ -124,7 +129,7 @@ namespace WindowsFormsApp1
             if (!IsValidPasswords()) return;
 
             // Update the user's password
-            _users = clsUsers.Find(_PersonID); // Fetch updated user details
+            _users = clsUsers.Find(_UerID); // Fetch updated user details
             _users.Password = txtNewPassword.Text;
             ShowMessage("Password changed successfully.", "Confirm", MessageBoxIcon.Exclamation);
         }

@@ -14,6 +14,7 @@ namespace DVLBuisnesLayer
 
         public int UserID { get; set; } 
         public int PersonID { get; set; }
+        public clsPerson PersonInfo;
         public string UserName { get; set; }
         public string Password { get; set; }
         public bool IsActive { get; set; }
@@ -34,6 +35,7 @@ namespace DVLBuisnesLayer
         {
             UserID=userID; 
             PersonID=personID; 
+            PersonInfo=clsPerson.Find(PersonID);
             UserName=userName; 
             Password=password; 
             IsActive=isActive;
@@ -43,7 +45,6 @@ namespace DVLBuisnesLayer
         { 
           return clsUsersDataAccess.IsUserExistByUserNameAndPassword(username, password);
         }
-
 
         public static clsUsers Find(string userName)
         {
@@ -67,6 +68,24 @@ namespace DVLBuisnesLayer
 
 
         }
+
+        public static clsUsers FindByUsernameAndPassword(string UserName, string Password)
+        {
+            int UserID = -1;
+            int PersonID = -1;
+
+            bool IsActive = false;
+
+            bool IsFound =clsUsersDataAccess.GetUserInfoByUsernameAndPassword
+                                (UserName, Password, ref UserID, ref PersonID, ref IsActive);
+
+            if (IsFound)
+                //we return new object of that User with the right data
+                return new clsUsers(UserID, PersonID, UserName, Password, IsActive);
+            else
+                return null;
+        }
+
 
         public static DataTable GettAllUsers()
         {
@@ -99,7 +118,7 @@ namespace DVLBuisnesLayer
             return clsUsersDataAccess.DeleteUser(UserID);
 
         }
-      public static bool RightPassword(string UserName ,string Password)
+         public static bool RightPassword(string UserName ,string Password)
         {
 
             return clsUsersDataAccess.IsCorrectPassword(UserName, Password);

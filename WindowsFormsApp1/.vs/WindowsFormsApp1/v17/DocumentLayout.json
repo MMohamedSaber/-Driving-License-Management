@@ -3,63 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|WindowsFormsApp1.csproj|c:\\users\\moham\\driving-license-management\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|WindowsFormsApp1.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|c:\\users\\moham\\driving-license-management\\windowsformsapp1\\applications\\frmupdateapplicationtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|solutionrelative:applications\\frmupdateapplicationtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|WindowsFormsApp1.csproj|C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|WindowsFormsApp1.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|c:\\users\\moham\\driving-license-management\\windowsformsapp1\\applications\\frmlocallicenseapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|solutionrelative:applications\\frmlocallicenseapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|WindowsFormsApp1.csproj|C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmreleasedetainedlicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|WindowsFormsApp1.csproj|solutionrelative:frmreleasedetainedlicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD640391-F577-4833-8378-5F375CC74E62}|..\\DLMDataAccessLayer\\DLMDataAccessLayer.csproj|c:\\users\\moham\\driving-license-management\\dlmdataaccesslayer\\clsapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|WindowsFormsApp1.csproj|C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmreleasedetainedlicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|WindowsFormsApp1.csproj|solutionrelative:frmreleasedetainedlicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|WindowsFormsApp1.csproj|C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmdetainlicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|WindowsFormsApp1.csproj|solutionrelative:frmdetainlicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72B82EF1-47FB-48A4-827D-7E2DFA41CF5A}|..\\DLMBuisnessLayer\\DLMBuisnessLayer.csproj|c:\\users\\moham\\driving-license-management\\dlmbuisnesslayer\\clsdetain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD640391-F577-4833-8378-5F375CC74E62}|..\\DLMDataAccessLayer\\DLMDataAccessLayer.csproj|c:\\users\\moham\\driving-license-management\\dlmdataaccesslayer\\clsdetaindata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72B82EF1-47FB-48A4-827D-7E2DFA41CF5A}|..\\DLMBuisnessLayer\\DLMBuisnessLayer.csproj|c:\\users\\moham\\driving-license-management\\dlmbuisnesslayer\\clsapplications.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72B82EF1-47FB-48A4-827D-7E2DFA41CF5A}|..\\DLMBuisnessLayer\\DLMBuisnessLayer.csproj|c:\\users\\moham\\driving-license-management\\dlmbuisnesslayer\\clslocaldrivinglicenseapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72B82EF1-47FB-48A4-827D-7E2DFA41CF5A}|..\\DLMBuisnessLayer\\DLMBuisnessLayer.csproj|c:\\users\\moham\\driving-license-management\\dlmbuisnesslayer\\clslicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD640391-F577-4833-8378-5F375CC74E62}|..\\DLMDataAccessLayer\\DLMDataAccessLayer.csproj|c:\\users\\moham\\driving-license-management\\dlmdataaccesslayer\\clslicensedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD640391-F577-4833-8378-5F375CC74E62}|..\\DLMDataAccessLayer\\DLMDataAccessLayer.csproj|c:\\users\\moham\\driving-license-management\\dlmdataaccesslayer\\clslocaldrivinglicenseapplicationdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD640391-F577-4833-8378-5F375CC74E62}|..\\DLMDataAccessLayer\\DLMDataAccessLayer.csproj|c:\\users\\moham\\driving-license-management\\dlmdataaccesslayer\\clsinternationallicensedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD640391-F577-4833-8378-5F375CC74E62}|..\\DLMDataAccessLayer\\DLMDataAccessLayer.csproj|c:\\users\\moham\\driving-license-management\\dlmdataaccesslayer\\clsdriversdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72B82EF1-47FB-48A4-827D-7E2DFA41CF5A}|..\\DLMBuisnessLayer\\DLMBuisnessLayer.csproj|c:\\users\\moham\\driving-license-management\\dlmbuisnesslayer\\clsclsinternationallicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72B82EF1-47FB-48A4-827D-7E2DFA41CF5A}|..\\DLMBuisnessLayer\\DLMBuisnessLayer.csproj|c:\\users\\moham\\driving-license-management\\dlmbuisnesslayer\\clstest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72B82EF1-47FB-48A4-827D-7E2DFA41CF5A}|..\\DLMBuisnessLayer\\DLMBuisnessLayer.csproj|c:\\users\\moham\\driving-license-management\\dlmbuisnesslayer\\clsdrivers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|c:\\users\\moham\\driving-license-management\\windowsformsapp1\\applications\\frmmangelocallicensapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|solutionrelative:applications\\frmmangelocallicensapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -69,232 +22,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmReleaseDetainedLicense.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmReleaseDetainedLicense.cs",
-              "RelativeDocumentMoniker": "frmReleaseDetainedLicense.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmReleaseDetainedLicense.cs",
-              "RelativeToolTip": "frmReleaseDetainedLicense.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAQwHMAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T14:06:17.401Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmReleaseDetainedLicense.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmReleaseDetainedLicense.cs",
-              "RelativeDocumentMoniker": "frmReleaseDetainedLicense.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmReleaseDetainedLicense.cs [Design]",
-              "RelativeToolTip": "frmReleaseDetainedLicense.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T13:54:48.599Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "frmDetainLicense.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmDetainLicense.cs",
-              "RelativeDocumentMoniker": "frmDetainLicense.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmDetainLicense.cs",
-              "RelativeToolTip": "frmDetainLicense.cs",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAEwG8AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T14:10:34.047Z",
-              "IsPinned": true
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\Form1.cs",
-              "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAIIAAAAAAAAAAAAlwJUAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T09:39:07.213Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\Form1.cs [Design]",
-              "RelativeToolTip": "Form1.cs [Design]",
+              "Title": "frmUpdateApplicationType.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\Applications\\frmUpdateApplicationType.cs",
+              "RelativeDocumentMoniker": "Applications\\frmUpdateApplicationType.cs",
+              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\Applications\\frmUpdateApplicationType.cs [Design]",
+              "RelativeToolTip": "Applications\\frmUpdateApplicationType.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T06:52:04.679Z",
+              "WhenOpened": "2024-12-27T06:39:04.403Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "clsDetain.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\DLMBuisnessLayer\\clsDetain.cs",
-              "RelativeDocumentMoniker": "..\\DLMBuisnessLayer\\clsDetain.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\DLMBuisnessLayer\\clsDetain.cs",
-              "RelativeToolTip": "..\\DLMBuisnessLayer\\clsDetain.cs",
-              "ViewState": "AgIAAGcAAAAAAAAAAAAlwIIAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "frmLocalLicenseApplication.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\Applications\\frmLocalLicenseApplication.cs",
+              "RelativeDocumentMoniker": "Applications\\frmLocalLicenseApplication.cs",
+              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\Applications\\frmLocalLicenseApplication.cs [Design]",
+              "RelativeToolTip": "Applications\\frmLocalLicenseApplication.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T04:43:29.596Z"
+              "WhenOpened": "2024-12-27T06:37:26.716Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "clsDetainData.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\DLMDataAccessLayer\\clsDetainData.cs",
-              "RelativeDocumentMoniker": "..\\DLMDataAccessLayer\\clsDetainData.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\DLMDataAccessLayer\\clsDetainData.cs",
-              "RelativeToolTip": "..\\DLMDataAccessLayer\\clsDetainData.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAlwC4AAAAIAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "frmMangeLocalLicensApplication.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\Applications\\frmMangeLocalLicensApplication.cs",
+              "RelativeDocumentMoniker": "Applications\\frmMangeLocalLicensApplication.cs",
+              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\Applications\\frmMangeLocalLicensApplication.cs [Design]",
+              "RelativeToolTip": "Applications\\frmMangeLocalLicensApplication.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T04:25:59.608Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "clsTest.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\DLMBuisnessLayer\\clsTest.cs",
-              "RelativeDocumentMoniker": "..\\DLMBuisnessLayer\\clsTest.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\DLMBuisnessLayer\\clsTest.cs",
-              "RelativeToolTip": "..\\DLMBuisnessLayer\\clsTest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBMAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T19:38:13.367Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "clsclsInternationalLicense.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\DLMBuisnessLayer\\clsclsInternationalLicense.cs",
-              "RelativeDocumentMoniker": "..\\DLMBuisnessLayer\\clsclsInternationalLicense.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\DLMBuisnessLayer\\clsclsInternationalLicense.cs",
-              "RelativeToolTip": "..\\DLMBuisnessLayer\\clsclsInternationalLicense.cs",
-              "ViewState": "AgIAAKkAAAAAAAAAAAAqwMsAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T08:29:31.967Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "clsInternationalLicenseData.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\DLMDataAccessLayer\\clsInternationalLicenseData.cs",
-              "RelativeDocumentMoniker": "..\\DLMDataAccessLayer\\clsInternationalLicenseData.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\DLMDataAccessLayer\\clsInternationalLicenseData.cs",
-              "RelativeToolTip": "..\\DLMDataAccessLayer\\clsInternationalLicenseData.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAowGcAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T08:29:09.376Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "clsLocalDrivingLicenseApplicationData.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\DLMDataAccessLayer\\clsLocalDrivingLicenseApplicationData.cs",
-              "RelativeDocumentMoniker": "..\\DLMDataAccessLayer\\clsLocalDrivingLicenseApplicationData.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\DLMDataAccessLayer\\clsLocalDrivingLicenseApplicationData.cs",
-              "RelativeToolTip": "..\\DLMDataAccessLayer\\clsLocalDrivingLicenseApplicationData.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAnwCoAAABcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T07:38:38.086Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "clsDrivers.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\DLMBuisnessLayer\\clsDrivers.cs",
-              "RelativeDocumentMoniker": "..\\DLMBuisnessLayer\\clsDrivers.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\DLMBuisnessLayer\\clsDrivers.cs",
-              "RelativeToolTip": "..\\DLMBuisnessLayer\\clsDrivers.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAArwCQAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T12:27:49.947Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "clsDriversData.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\DLMDataAccessLayer\\clsDriversData.cs",
-              "RelativeDocumentMoniker": "..\\DLMDataAccessLayer\\clsDriversData.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\DLMDataAccessLayer\\clsDriversData.cs",
-              "RelativeToolTip": "..\\DLMDataAccessLayer\\clsDriversData.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAowA4AAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T12:20:58.225Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "clsLicenseData.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\DLMDataAccessLayer\\clsLicenseData.cs",
-              "RelativeDocumentMoniker": "..\\DLMDataAccessLayer\\clsLicenseData.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\DLMDataAccessLayer\\clsLicenseData.cs",
-              "RelativeToolTip": "..\\DLMDataAccessLayer\\clsLicenseData.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAnwGwAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T07:06:13.459Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "clsLicense.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\DLMBuisnessLayer\\clsLicense.cs",
-              "RelativeDocumentMoniker": "..\\DLMBuisnessLayer\\clsLicense.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\DLMBuisnessLayer\\clsLicense.cs",
-              "RelativeToolTip": "..\\DLMBuisnessLayer\\clsLicense.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAnwHYAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T07:04:31.889Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "clsLocalDrivingLicenseApplication.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\DLMBuisnessLayer\\clsLocalDrivingLicenseApplication.cs",
-              "RelativeDocumentMoniker": "..\\DLMBuisnessLayer\\clsLocalDrivingLicenseApplication.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\DLMBuisnessLayer\\clsLocalDrivingLicenseApplication.cs",
-              "RelativeToolTip": "..\\DLMBuisnessLayer\\clsLocalDrivingLicenseApplication.cs",
-              "ViewState": "AgIAAHgAAAAAAAAAAAAawIYAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T07:02:49.992Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "clsApplication.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\DLMDataAccessLayer\\clsApplication.cs",
-              "RelativeDocumentMoniker": "..\\DLMDataAccessLayer\\clsApplication.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\DLMDataAccessLayer\\clsApplication.cs",
-              "RelativeToolTip": "..\\DLMDataAccessLayer\\clsApplication.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAlwHAAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T06:23:56.819Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "clsApplications.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\DLMBuisnessLayer\\clsApplications.cs",
-              "RelativeDocumentMoniker": "..\\DLMBuisnessLayer\\clsApplications.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\DLMBuisnessLayer\\clsApplications.cs",
-              "RelativeToolTip": "..\\DLMBuisnessLayer\\clsApplications.cs",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAmwHAAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T06:18:01.754Z"
+              "WhenOpened": "2024-12-27T06:37:24.04Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

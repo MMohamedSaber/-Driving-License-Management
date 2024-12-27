@@ -58,7 +58,11 @@ namespace WindowsFormsApp1
             if (_Mode == enMode.AddMode)
             {
                 lblAddNewTitle.Text = "Add New User"; // Set title for Add mode
+                _User=new clsUsers();
+
+                tabPage2.Enabled = false;
                 return;
+
             }
             else
             {
@@ -80,6 +84,7 @@ namespace WindowsFormsApp1
                     txtUserName.Text = _User.UserName;
                     txtPassword.Text = _User.Password;
                     txtConfirmPassword.Text = _User.Password;
+                    
                 }
             }
         }
@@ -142,6 +147,7 @@ namespace WindowsFormsApp1
         {
             if (!string.IsNullOrEmpty(txtSearchKey.Text))
             {
+                tabPage2.Enabled = true;
                 if (clsUsers.IsUserExist(_Person.ID))
                 {
                     MessageBox.Show("The person is already a user. Choose another one.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

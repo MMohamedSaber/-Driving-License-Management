@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35219.272
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1.csproj", "{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVLD", "DVLD.csproj", "{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLMDataAccessLayer", "..\DLMDataAccessLayer\DLMDataAccessLayer.csproj", "{FD640391-F577-4833-8378-5F375CC74E62}"
 EndProject

@@ -1,4 +1,5 @@
 ﻿using DVLBuisnesLayer;
+using DVLD;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,29 +19,47 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
-           string UserName=txtUserName.Text;
-           string Password=txtPassword.Text;
+            clsUsers user = clsUsers.FindByUsernameAndPassword(txtUserName.Text.Trim(), txtPassword.Text.Trim());
 
-            if (!string.IsNullOrEmpty(UserName) && !string.IsNullOrEmpty(Password))
+            if (user != null)
             {
-                if (clsUsers.Find(UserName, Password))
+
+                if (chRememberMe.Checked)
                 {
-                   // int PersonID= clsUsers.Find(UserName).PersonID;
-                    Form1 frm = new Form1(clsUsers.Find(UserName).PersonID,clsUsers.Find(UserName).UserName);
-                    frm.ShowDialog();
-                    this.Close();
+                    //store username and password
+                    clsGlobal.RememberUsernameAndPassword(txtUserName.Text.Trim(), txtPassword.Text.Trim());
+
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Username/Passord", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //store empty username and password
+                    clsGlobal.RememberUsernameAndPassword("", "");
+
                 }
+
+                //incase the user is not active
+                if (!user.IsActive)
+                {
+
+                    txtUserName.Focus();
+                    MessageBox.Show("Your accound is not Active, Contact Admin.", "In Active Account", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                clsGlobal.CurrentUser = user;
+                this.Hide();
+                frmMain frm = new frmMain(this);
+                frm.ShowDialog();
+
 
             }
             else
             {
-                MessageBox.Show("Fill The Field", "Asking", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtUserName.Focus();
+                MessageBox.Show("Invalid Username/Password.", "Wrong Credintials", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
@@ -76,6 +95,20 @@ namespace WindowsFormsApp1
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void frmLoginScreen_Load(object sender, EventArgs e)
+        {
+            string UserName = "", Password = "";
+
+            if (clsGlobal.GetStoredCredential(ref UserName, ref Password))
+            {
+                txtUserName.Text = UserName;
+                txtPassword.Text = Password;
+                chRememberMe.Checked = true;
+            }
+            else
+                chRememberMe.Checked = false;
         }
     }
 }
