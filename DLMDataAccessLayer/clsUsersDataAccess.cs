@@ -214,6 +214,43 @@ namespace DLMDataAccessLayer
         }
 
 
+        public static bool GetUserInfoByUserID( int userID, ref int personID, ref string userName, ref string
+         password, ref bool isActive)
+        {
+
+            bool isFound = false;
+            SqlConnection connection = new SqlConnection(DataAccessSetting.ConnectionString);
+            string Query = "Select * from Users Where UserID=@UserID";
+
+            SqlCommand Command = new SqlCommand(Query, connection);
+            Command.Parameters.AddWithValue("@UserID", userID);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = Command.ExecuteReader();
+                if (reader.Read())
+                {
+                    userID = (int)reader["UserID"];
+                    personID = (int)reader["PersonID"];
+                    userName = (string)reader["UserName"];
+                    password = (string)reader["Password"];
+                    isActive = (bool)reader["IsActive"];
+                }
+                reader.Close();
+
+            }
+            catch (Exception e)
+            {
+                isFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isFound;
+
+        }
+
         public static bool GetUserInfoByUserName(ref int personID, ref int userID, ref string userName, ref string
            password, ref bool isActive)
         {

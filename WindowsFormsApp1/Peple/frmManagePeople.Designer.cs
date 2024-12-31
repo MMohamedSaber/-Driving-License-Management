@@ -120,7 +120,6 @@
             this.cbFilterData.Size = new System.Drawing.Size(121, 21);
             this.cbFilterData.TabIndex = 5;
             this.cbFilterData.SelectedIndexChanged += new System.EventHandler(this.cbFilterData_SelectedIndexChanged);
-            this.cbFilterData.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbFilterData_KeyPress);
             // 
             // label2
             // 
@@ -152,14 +151,14 @@
             this.sendEmailToolStripMenuItem,
             this.phoneCallToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(163, 136);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 158);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // udateToolStripMenuItem
             // 
             this.udateToolStripMenuItem.Image = global::WindowsFormsApp1.Properties.Resources.PersonDetails_32;
             this.udateToolStripMenuItem.Name = "udateToolStripMenuItem";
-            this.udateToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.udateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.udateToolStripMenuItem.Text = "Show Details";
             this.udateToolStripMenuItem.Click += new System.EventHandler(this.udateToolStripMenuItem_Click);
             // 
@@ -167,14 +166,14 @@
             // 
             this.addNewPersonToolStripMenuItem.Image = global::WindowsFormsApp1.Properties.Resources.Add_Person_401;
             this.addNewPersonToolStripMenuItem.Name = "addNewPersonToolStripMenuItem";
-            this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addNewPersonToolStripMenuItem.Text = "Add New Person";
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Image = global::WindowsFormsApp1.Properties.Resources.edit_32;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
@@ -182,7 +181,7 @@
             // 
             this.deleteToolStripMenuItem.Image = global::WindowsFormsApp1.Properties.Resources.Delete_32;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -190,14 +189,14 @@
             // 
             this.sendEmailToolStripMenuItem.Image = global::WindowsFormsApp1.Properties.Resources.Email_321;
             this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
-            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sendEmailToolStripMenuItem.Text = "Send Email";
             // 
             // phoneCallToolStripMenuItem
             // 
             this.phoneCallToolStripMenuItem.Image = global::WindowsFormsApp1.Properties.Resources.call_32;
             this.phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
-            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.phoneCallToolStripMenuItem.Text = "Phone Call";
             // 
             // button1

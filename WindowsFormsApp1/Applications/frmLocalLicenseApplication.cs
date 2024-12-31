@@ -66,7 +66,7 @@ namespace WindowsFormsApp1
                 lblApplicationDate.Text = DateTime.Now.ToString("dd-MM-yyyy");
                 lblApplicationFees.Text = clsApplicationType.
                     Find((int)clsApplication.enApplicationType.NewDrivingLicense).Fees.ToString();
-                lblUserCreation.Text = clsUsers.Find(UserName).UserName;
+                lblUserCreation.Text = clsUsers.FindByUserName(UserName).UserName;
 
             }
 
@@ -100,7 +100,7 @@ namespace WindowsFormsApp1
             _LocalDrivngLiceseApplication.ApplicationStatus = (clsApplication.enApplicationStatus.New);
             _LocalDrivngLiceseApplication.LastStatusDate = DateTime.Now;
             _LocalDrivngLiceseApplication.PaidFees = Convert.ToSingle(lblApplicationFees.Text);
-            _LocalDrivngLiceseApplication.CreatedByUserID = clsUsers.Find(UserName).UserID;
+            _LocalDrivngLiceseApplication.CreatedByUserID = clsUsers.FindByUserName(UserName).UserID;
             _LocalDrivngLiceseApplication.LicenseClassID = cbLicenseClass.SelectedIndex + 1;
 
 

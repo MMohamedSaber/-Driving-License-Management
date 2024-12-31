@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
         private void _loadUserDetails()
         {
             // Retrieve user details
-            _users = clsUsers.Find(_UerID);
+            _users = clsUsers.FindByUserID(_UerID);
             if (_users != null)
             {
                 // Populate person details

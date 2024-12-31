@@ -283,6 +283,16 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Damaged_Driving_License_32 {
+            get {
+                object obj = ResourceManager.GetObject("Damaged Driving License 32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Delete_32 {
             get {
                 object obj = ResourceManager.GetObject("Delete 32", resourceCulture);
@@ -356,6 +366,16 @@ namespace WindowsFormsApp1.Properties {
         internal static System.Drawing.Bitmap Detain_641 {
             get {
                 object obj = ResourceManager.GetObject("Detain 641", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Detained_Driving_License_32 {
+            get {
+                object obj = ResourceManager.GetObject("Detained Driving License 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -473,6 +493,16 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap International_322 {
+            get {
+                object obj = ResourceManager.GetObject("International 322", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IssueDrivingLicense_32 {
             get {
                 object obj = ResourceManager.GetObject("IssueDrivingLicense 32", resourceCulture);
@@ -516,6 +546,16 @@ namespace WindowsFormsApp1.Properties {
         internal static System.Drawing.Bitmap LicenseView_400 {
             get {
                 object obj = ResourceManager.GetObject("LicenseView 400", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Local_32 {
+            get {
+                object obj = ResourceManager.GetObject("Local 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -853,6 +893,16 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Retake_Test_32 {
+            get {
+                object obj = ResourceManager.GetObject("Retake Test 32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Save_32 {
             get {
                 object obj = ResourceManager.GetObject("Save 32", resourceCulture);
@@ -876,6 +926,16 @@ namespace WindowsFormsApp1.Properties {
         internal static System.Drawing.Bitmap Schedule_Test_32 {
             get {
                 object obj = ResourceManager.GetObject("Schedule Test 32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Schedule_Test_321 {
+            get {
+                object obj = ResourceManager.GetObject("Schedule Test 321", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -916,6 +976,26 @@ namespace WindowsFormsApp1.Properties {
         internal static System.Drawing.Bitmap Test_32 {
             get {
                 object obj = ResourceManager.GetObject("Test 32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Test_Type_64 {
+            get {
+                object obj = ResourceManager.GetObject("Test Type 64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TestType_32 {
+            get {
+                object obj = ResourceManager.GetObject("TestType 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

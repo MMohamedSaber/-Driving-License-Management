@@ -3,43 +3,47 @@
   "WorkspaceRootPath": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|c:\\users\\moham\\driving-license-management\\windowsformsapp1\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|c:\\users\\moham\\driving-license-management\\windowsformsapp1\\frmloginscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|solutionrelative:frmloginscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|c:\\users\\moham\\driving-license-management\\windowsformsapp1\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|c:\\users\\moham\\driving-license-management\\windowsformsapp1\\clsglobal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|solutionrelative:clsglobal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|c:\\users\\moham\\driving-license-management\\windowsformsapp1\\frmmanageusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|solutionrelative:frmmanageusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|c:\\users\\moham\\driving-license-management\\windowsformsapp1\\frmuserdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|solutionrelative:frmuserdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|c:\\users\\moham\\driving-license-management\\windowsformsapp1\\frmuserdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|solutionrelative:frmuserdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmmanageusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|solutionrelative:frmmanageusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\peple\\frmmanagepeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|solutionrelative:peple\\frmmanagepeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmloginscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|solutionrelative:frmloginscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|c:\\users\\moham\\driving-license-management\\windowsformsapp1\\frmuserdetails.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|solutionrelative:frmuserdetails.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\peple\\frmmanagepeople.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|solutionrelative:peple\\frmmanagepeople.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD640391-F577-4833-8378-5F375CC74E62}|..\\DLMDataAccessLayer\\DLMDataAccessLayer.csproj|c:\\users\\moham\\driving-license-management\\dlmdataaccesslayer\\clsusersdataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\peple\\frmmanagepeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|solutionrelative:peple\\frmmanagepeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{72B82EF1-47FB-48A4-827D-7E2DFA41CF5A}|..\\DLMBuisnessLayer\\DLMBuisnessLayer.csproj|c:\\users\\moham\\driving-license-management\\dlmbuisnesslayer\\clsapplications.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\applications\\frmmangelocallicensapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|solutionrelative:applications\\frmmangelocallicensapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmaddnewuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|solutionrelative:frmaddnewuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmaddnewuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|solutionrelative:frmaddnewuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\applications\\frmmangelocallicensapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{01DFAE68-38E0-4EF2-9695-8C9AF7529BDE}|DVLD.csproj|solutionrelative:applications\\frmmangelocallicensapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -49,20 +53,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "frmLoginScreen.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmLoginScreen.cs",
-              "RelativeDocumentMoniker": "frmLoginScreen.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmLoginScreen.cs [Design]",
-              "RelativeToolTip": "frmLoginScreen.cs [Design]",
+              "DocumentIndex": 1,
+              "Title": "clsGlobal.cs",
+              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\clsGlobal.cs",
+              "RelativeDocumentMoniker": "clsGlobal.cs",
+              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\clsGlobal.cs*",
+              "RelativeToolTip": "clsGlobal.cs*",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAmwHkAAABiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T08:52:53.259Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-12-31T07:28:04.054Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -70,117 +74,123 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmMain.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmMain.cs",
-              "RelativeDocumentMoniker": "frmMain.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmMain.cs [Design]*",
-              "RelativeToolTip": "frmMain.cs [Design]*",
+              "DocumentIndex": 0,
+              "Title": "frmLoginScreen.cs",
+              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmLoginScreen.cs",
+              "RelativeDocumentMoniker": "frmLoginScreen.cs",
+              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmLoginScreen.cs*",
+              "RelativeToolTip": "frmLoginScreen.cs*",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAIwGQAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T05:14:39.556Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "frmManageUsers.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmManageUsers.cs",
-              "RelativeDocumentMoniker": "frmManageUsers.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmManageUsers.cs [Design]",
-              "RelativeToolTip": "frmManageUsers.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T07:44:18.266Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmUserDetails.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmUserDetails.cs",
-              "RelativeDocumentMoniker": "frmUserDetails.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmUserDetails.cs [Design]",
-              "RelativeToolTip": "frmUserDetails.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T05:37:32.505Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmUserDetails.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmUserDetails.cs",
-              "RelativeDocumentMoniker": "frmUserDetails.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmUserDetails.cs",
-              "RelativeToolTip": "frmUserDetails.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAIwEgAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T05:38:52.44Z",
+              "WhenOpened": "2024-12-28T08:59:00.449Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "frmManageUsers.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmManageUsers.cs",
-              "RelativeDocumentMoniker": "frmManageUsers.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmManageUsers.cs",
-              "RelativeToolTip": "frmManageUsers.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKoAAAAJAAAAAAAAAA==",
+              "Title": "frmManagePeople.cs",
+              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\Peple\\frmManagePeople.cs",
+              "RelativeDocumentMoniker": "Peple\\frmManagePeople.cs",
+              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\Peple\\frmManagePeople.cs",
+              "RelativeToolTip": "Peple\\frmManagePeople.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T05:43:56.724Z",
+              "WhenOpened": "2024-12-28T08:24:52.503Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmMain.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmMain.cs",
-              "RelativeDocumentMoniker": "frmMain.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmMain.cs*",
-              "RelativeToolTip": "frmMain.cs*",
-              "ViewState": "AgIAACMAAAAAAAAAAAAWwDAAAAAWAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "frmManagePeople.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\Peple\\frmManagePeople.cs",
+              "RelativeDocumentMoniker": "Peple\\frmManagePeople.cs",
+              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\Peple\\frmManagePeople.cs [Design]",
+              "RelativeToolTip": "Peple\\frmManagePeople.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T05:14:42.708Z",
+              "WhenOpened": "2024-12-28T08:24:51.082Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "clsApplications.cs",
+              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\DLMBuisnessLayer\\clsApplications.cs",
+              "RelativeDocumentMoniker": "..\\DLMBuisnessLayer\\clsApplications.cs",
+              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\DLMBuisnessLayer\\clsApplications.cs",
+              "RelativeToolTip": "..\\DLMBuisnessLayer\\clsApplications.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAA5wEcAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T08:21:12.068Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "frmAddNewUser.cs",
+              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmAddNewUser.cs",
+              "RelativeDocumentMoniker": "frmAddNewUser.cs",
+              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmAddNewUser.cs",
+              "RelativeToolTip": "frmAddNewUser.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAApwBMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T08:08:06.061Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "frmAddNewUser.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmAddNewUser.cs",
+              "RelativeDocumentMoniker": "frmAddNewUser.cs",
+              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmAddNewUser.cs [Design]",
+              "RelativeToolTip": "frmAddNewUser.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T08:08:00.143Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmLoginScreen.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmLoginScreen.cs",
+              "RelativeDocumentMoniker": "frmLoginScreen.cs",
+              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmLoginScreen.cs [Design]*",
+              "RelativeToolTip": "frmLoginScreen.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T08:58:58.882Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmManagePeople.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\Peple\\frmManagePeople.Designer.cs",
+              "RelativeDocumentMoniker": "Peple\\frmManagePeople.Designer.cs",
+              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\Peple\\frmManagePeople.Designer.cs",
+              "RelativeToolTip": "Peple\\frmManagePeople.Designer.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAowHoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T08:39:05.442Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "frmUserDetails.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmUserDetails.Designer.cs",
-              "RelativeDocumentMoniker": "frmUserDetails.Designer.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\frmUserDetails.Designer.cs",
-              "RelativeToolTip": "frmUserDetails.Designer.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAiwCcAAAAPAAAAAAAAAA==",
+              "Title": "frmMangeLocalLicensApplication.cs",
+              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\Applications\\frmMangeLocalLicensApplication.cs",
+              "RelativeDocumentMoniker": "Applications\\frmMangeLocalLicensApplication.cs",
+              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\Applications\\frmMangeLocalLicensApplication.cs",
+              "RelativeToolTip": "Applications\\frmMangeLocalLicensApplication.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T05:38:12.712Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-28T07:51:37.889Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "clsUsersDataAccess.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\DLMDataAccessLayer\\clsUsersDataAccess.cs",
-              "RelativeDocumentMoniker": "..\\DLMDataAccessLayer\\clsUsersDataAccess.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\DLMDataAccessLayer\\clsUsersDataAccess.cs",
-              "RelativeToolTip": "..\\DLMDataAccessLayer\\clsUsersDataAccess.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAArwGkAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "frmMangeLocalLicensApplication.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\Applications\\frmMangeLocalLicensApplication.cs",
+              "RelativeDocumentMoniker": "Applications\\frmMangeLocalLicensApplication.cs",
+              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\Applications\\frmMangeLocalLicensApplication.cs [Design]",
+              "RelativeToolTip": "Applications\\frmMangeLocalLicensApplication.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T05:03:32.094Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\moham\\Driving-License-Management\\WindowsFormsApp1\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBQAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T07:06:05.876Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-28T07:51:35.104Z"
             }
           ]
         }

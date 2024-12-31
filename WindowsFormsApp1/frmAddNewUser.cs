@@ -222,6 +222,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("The user was saved successfully.", "Confirm", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 lblUserID.Text = _User.UserID.ToString();
                 lblAddNewTitle.Text = "Update User";
+                btnSave.Enabled = false;
             }
             else
             {

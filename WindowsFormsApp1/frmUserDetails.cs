@@ -30,7 +30,9 @@ namespace WindowsFormsApp1
 
         private void LoadUserDetails()
         {
-            if (clsGlobal.CurrentUser == null || clsGlobal.CurrentUser.PersonInfo == null)
+            User = clsUsers.FindByUserID(_userID);
+
+            if (User == null || User.PersonInfo == null)
             {
                 MessageBox.Show("No user information available.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -42,10 +44,7 @@ namespace WindowsFormsApp1
 
         private void PopulatePersonDetails()
         {
-            User = clsUsers.Find(_userID);
-
-            if (User != null)
-            {
+            
                 ucUserInformation1.PersonID = User.PersonInfo.ID.ToString();
                 ucUserInformation1.FullName =
                     $"{User.PersonInfo.FirstName} " +
@@ -60,17 +59,16 @@ namespace WindowsFormsApp1
                 ucUserInformation1.DateOfBirth = User.PersonInfo.DateOfBirth;
                 ucUserInformation1.Country = clsCountries.Find(User.PersonInfo.NationalityCountryID)?.CountryName ?? "Unknown";
                 ucUserInformation1.ImagePath = User.PersonInfo.ImagePath;
-            }
+            
         }
 
         private void PopulateUserDetails()
         {
-            if (User != null)
-            {
+           
                 ucUserInformation1.UserID = User.UserID.ToString();
                 ucUserInformation1.UserName = User.UserName;
                 ucUserInformation1.IsActive = User.IsActive ? "Yes" : "No";
-            }
+            
         }
     }
 }

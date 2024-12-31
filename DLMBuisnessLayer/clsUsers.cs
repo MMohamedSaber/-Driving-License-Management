@@ -46,7 +46,7 @@ namespace DVLBuisnesLayer
           return clsUsersDataAccess.IsUserExistByUserNameAndPassword(username, password);
         }
 
-        public static clsUsers Find(string userName)
+        public static clsUsers FindByUserName(string userName)
         {
 
             string  Password = "";
@@ -65,6 +65,18 @@ namespace DVLBuisnesLayer
             clsUsersDataAccess.GetUserInfoByPersonID( ref personID, ref UserId,ref UserName,ref Password,ref isActive);
 
             return new clsUsers(UserId, personID, UserName, Password, isActive);
+
+
+        }
+
+        public static clsUsers FindByUserID(int UserID)
+        {
+            string UserName = "", Password = "";
+            int PerosnID = -1;
+            bool isActive = false;
+            clsUsersDataAccess.GetUserInfoByUserID(UserID, ref PerosnID, ref UserName, ref Password, ref isActive);
+
+            return new clsUsers(UserID, PerosnID, UserName, Password, isActive);
 
 
         }

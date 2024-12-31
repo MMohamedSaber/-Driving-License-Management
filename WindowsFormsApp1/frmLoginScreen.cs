@@ -1,14 +1,10 @@
 ﻿using DVLBuisnesLayer;
 using DVLD;
+using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace WindowsFormsApp1
 {
@@ -29,14 +25,15 @@ namespace WindowsFormsApp1
 
                 if (chRememberMe.Checked)
                 {
-                    //store username and password
-                    clsGlobal.RememberUsernameAndPassword(txtUserName.Text.Trim(), txtPassword.Text.Trim());
-
+                    if (!clsGlobal.SetRememberUserNameAndPassword(txtUserName.Text, txtPassword.Text))
+                        Console.WriteLine($"UserName and Passwod did not Save ,Check Rgistry/try statment ");
+              
                 }
                 else
                 {
-                    //store empty username and password
-                    clsGlobal.RememberUsernameAndPassword("", "");
+                    if (!clsGlobal.SetRememberUserNameAndPassword("", ""))
+                        Console.WriteLine($"UserName and Passwod did not Save ,Check Rgistry/try statment ");
+
 
                 }
 
@@ -67,20 +64,16 @@ namespace WindowsFormsApp1
         }
 
         private void txtUserName_Validating(object sender, CancelEventArgs e)
-        {
+                                       {
             if (string.IsNullOrEmpty(txtUserName.Text))
             {
                 errorProvider1.SetError(txtUserName, "The User Name is empty");
             }
 
-            //if (clsPerson.Find(txtNationalNo.Text))
-            //{
-            //    errorProvider1.SetError(txtNationalNo, "The National Number already exists");
-            //}
+            
         }
-
         private void txtPassword_Validating(object sender, CancelEventArgs e)
-        {
+                            {
             if (string.IsNullOrEmpty(txtPassword.Text))
             {
                 errorProvider1.SetError(txtPassword, "The Password Field is empty");
@@ -92,16 +85,13 @@ namespace WindowsFormsApp1
             this.Close();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void frmLoginScreen_Load(object sender, EventArgs e)
         {
-            string UserName = "", Password = "";
 
-            if (clsGlobal.GetStoredCredential(ref UserName, ref Password))
+            string UserName="";
+            string Password="";
+
+            if (clsGlobal.GetRememberUserNameAndPassword(ref  UserName, ref   Password))
             {
                 txtUserName.Text = UserName;
                 txtPassword.Text = Password;

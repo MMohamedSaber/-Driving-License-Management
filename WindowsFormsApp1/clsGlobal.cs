@@ -1,4 +1,5 @@
 ﻿using DVLBuisnesLayer;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -96,6 +97,46 @@ namespace DVLD
                 return false;
             }
 
+        }
+
+        public static bool SetRememberUserNameAndPassword(string Username,string Password)
+        {
+           
+
+            string keypath = @"HKEY_CURRENT_USER\Software\UserNameAndPasswordDVLD";
+            try
+            {
+
+                Registry.SetValue(keypath, "UserName", Username.Trim(), RegistryValueKind.String);
+                Registry.SetValue(keypath, "Password", Password.Trim(), RegistryValueKind.String);
+
+            }
+            catch ( Exception)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public static bool GetRememberUserNameAndPassword(ref string Username,ref string Password)
+        {
+
+
+            string keypath = @"HKEY_CURRENT_USER\Software\UserNameAndPasswordDVLD";
+            try
+            {
+
+                Username= Registry.GetValue(keypath, "UserName", null)as string;
+                Password= Registry.GetValue(keypath, "Password", null)as string;
+
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

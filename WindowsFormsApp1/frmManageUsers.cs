@@ -157,7 +157,7 @@ namespace WindowsFormsApp1
         // Event handler for the "Change Password" context menu item
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmChangePassword frm = new frmChangePassword((int)dgvUsers.CurrentRow.Cells[1].Value); // Open change password form
+            frmChangePassword frm = new frmChangePassword((int)dgvUsers.CurrentRow.Cells[0].Value); // Open change password form
             frm.Show(); // Show the form
         }
 
@@ -166,7 +166,7 @@ namespace WindowsFormsApp1
         {
 
             //Here
-            frmUserDetails frm = new frmUserDetails((int)dgvUsers.CurrentRow.Cells[1].Value); // Open user details form
+            frmUserDetails frm = new frmUserDetails((int)dgvUsers.CurrentRow.Cells[0].Value); // Open user details form
             frm.Show(); // Show the form
         }
 
